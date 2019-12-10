@@ -6,10 +6,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './components/App'
+import { GRAPHCMS_API } from './config'
 import * as serviceWorker from './serviceWorker'
-
-const GRAPHCMS_API =
-  'https://api-useast.graphcms.com/v1/cjiacyow100ob01eqwnghonw2/master'
 
 const client = new ApolloClient({
   link: new HttpLink({ uri: GRAPHCMS_API }),
