@@ -1,16 +1,18 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const Logo = styled.h1`
-  color: white;
+export const Logo = styled(Link)`
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   position: relative;
   display: inline-block;
-  background-color: white;
-  color: var(--dark);
-  width: 3.2rem;
+  background-color: var(--dark);
+  color: white;
+  width: 3.8rem;
   text-align: center;
-  height: 3.2rem;
-  line-height: 3.2rem;
-  border-radius: 50rem;
-  font-size: 1.2rem;
+  height: 3.8rem;
+  line-height: 3.8rem;
+  border-radius: 3rem;
+  font-size: 2rem;
+  text-decoration: none;
 `

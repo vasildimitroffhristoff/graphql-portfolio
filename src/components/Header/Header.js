@@ -1,16 +1,33 @@
-import { useQuery } from '@apollo/react-hooks'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-import Loading from '../Loading'
-import { POSTS } from './graphql'
-import { Header } from './HeaderStyles'
+import { Wrapper } from '../../theme'
+import Logo from '../Logo'
+import { HeaderContent, StyledHeader } from './HeaderStyles'
 
-function HeaderComponent() {
-  const { loading, error, data } = useQuery(POSTS)
-
-  if (loading || error || !data) return <Loading />
-
-  return <Header>Vaskata</Header>
+export default function Header() {
+  return (
+    <StyledHeader>
+      <Wrapper>
+        <HeaderContent>
+          <Logo />
+          <nav>
+            <Link exact to="/about">
+              about
+            </Link>
+            <Link exact to="/projects">
+              projects
+            </Link>
+            <a
+              href="https://github.com/vasildimitroffhristoff?tab=repositories"
+              target="__blank"
+              className="git-link"
+            >
+              <i className="icon-git fab fa-github-square"></i>
+            </a>
+          </nav>
+        </HeaderContent>
+      </Wrapper>
+    </StyledHeader>
+  )
 }
-
-export default HeaderComponent
