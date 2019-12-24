@@ -15,18 +15,20 @@ function HeaderComponent() {
 
   const { header, description } = data.about
   return (
-    <AboutSection>
-      <Wrapper>
-        <AboutHeader>
-          <img className="me" src={me} alt="me" />
-          <h2>
-            <i className="fas fa-terminal"></i>
-            {header}
-          </h2>
-        </AboutHeader>
-        <p>{description}</p>
-      </Wrapper>
-    </AboutSection>
+    <div className="page">
+      <AboutSection>
+        <Wrapper>
+          <AboutHeader>
+            <img className="me" src={me} alt="me" />
+            <h2>
+              <i className="fas fa-terminal"></i>
+              {header}
+            </h2>
+          </AboutHeader>
+          <p>{description}</p>
+        </Wrapper>
+      </AboutSection>
+    </div>
   )
 }
 

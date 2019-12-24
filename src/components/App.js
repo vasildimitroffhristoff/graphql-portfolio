@@ -1,26 +1,36 @@
 import React from 'react'
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-import { GlobalStyles } from '../theme'
 import About from './About'
-import Header from './Header'
 import Landing from './Landing'
+import Layout from './Layout'
 
-function App() {
+function App({ location }) {
+  const currentKey = location.pathname.split('/')[1] || '/'
+  const timeout = { enter: 3000, exit: 200 }
+
   return (
-    <Router>
-      <GlobalStyles />
-      <Header />
-      <Switch>
-        <Route exact path="/">
-          <Landing />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-      </Switch>
-    </Router>
+    <Layout>
+      <Route
+        render={({ location }) => (
+          <TransitionGroup component="main" className="page-main">
+            <CSSTransition
+              key={currentKey}
+              timeout={timeout}
+              classNames="fade"
+              appear
+            >
+              <Switch location={location}>
+                <Route exact path="/" component={Landing} />
+                <Route path="/about" component={About} />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        )}
+      />
+    </Layout>
   )
 }
 
-export default App
+export default withRouter(App)
