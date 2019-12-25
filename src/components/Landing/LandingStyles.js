@@ -58,14 +58,14 @@ export const Text = styled(Wrapper)`
     display: block;
   }
 
-  h2 {
+  /* h2 {
     font-size: 2.8rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.85rem;
     margin: 0 0 1.5rem 0;
     text-decoration: underline;
-  }
+  } */
 
   .sub-titles {
     display: flex;

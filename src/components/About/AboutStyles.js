@@ -6,6 +6,9 @@ export const AboutSection = styled.section`
   padding: 8rem 0;
 
   h2 {
+    width: 30rem;
+    margin: 5rem auto;
+
     .icon {
       font-size: 3rem;
       margin-right: 2rem;

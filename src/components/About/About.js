@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/react-hooks'
 import React from 'react'
+import Typist from 'react-typist'
 
 import me from '../../assets/me.svg'
 import { Wrapper } from '../../theme'
@@ -20,8 +21,18 @@ function HeaderComponent() {
         <Wrapper>
           <img className="me" src={me} alt="me" />
           <h2>
-            <i className="icon fas fa-terminal"></i>
-            {header}
+            <Typist
+              cursor={{
+                show: true,
+                blink: true,
+                hideWhenDone: true
+                // hideWhenDoneDelay: 500
+              }}
+            >
+              <Typist.Delay ms={500} />
+              <i className="icon fas fa-terminal"></i>
+              {header}
+            </Typist>
           </h2>
           <p
             className="two-cols"
