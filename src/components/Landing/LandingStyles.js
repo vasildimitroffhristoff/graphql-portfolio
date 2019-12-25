@@ -11,8 +11,10 @@ export const LandingWrapper = styled.header`
   display: flex;
   flex-direction: column;
 
-  .svg {
+  .wave {
     margin-top: auto;
+    position: relative;
+    bottom: -7rem;
   }
 `
 

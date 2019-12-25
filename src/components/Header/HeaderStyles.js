@@ -29,7 +29,7 @@ export const HeaderContent = styled.section`
       font-family: 'Montserrat', sans-serif;
 
       &.selected {
-        color: var(--blue);
+        text-decoration: underline;
       }
     }
     .icon-git {

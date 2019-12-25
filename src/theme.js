@@ -61,6 +61,7 @@ export const GlobalStyles = createGlobalStyle`
     --blue: #0099ff;
     --dark: #121212;
     --lightBlue: #e7f6ff;
+    --lightYellow: #ffa;
     --grey: #d6d6d6;
     --light: #fafafa;
   }
@@ -90,7 +91,7 @@ export const GlobalStyles = createGlobalStyle`
 
   p {
     font-size: 1.8rem;
-    font-weight: 300;
+    /* font-weight: 300; */
     line-height: 4rem;
   }
 
