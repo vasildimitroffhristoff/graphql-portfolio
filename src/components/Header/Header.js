@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { Wrapper } from '../../theme'
 import Logo from '../Logo'
@@ -12,12 +12,12 @@ export default function Header() {
         <HeaderContent>
           <Logo />
           <nav>
-            <Link exact to="/about">
+            <NavLink activeClassName="selected" exact to="/about">
               about
-            </Link>
-            <Link exact to="/projects">
+            </NavLink>
+            <NavLink activeClassName="selected" exact to="/projects">
               projects
-            </Link>
+            </NavLink>
             <a
               href="https://github.com/vasildimitroffhristoff?tab=repositories"
               target="__blank"

@@ -17,7 +17,7 @@ export const HeaderContent = styled.section`
   nav {
     display: flex;
     align-items: center;
-    
+
     a:not(.git-link) {
       color: #000;
       text-decoration: none;
@@ -27,11 +27,15 @@ export const HeaderContent = styled.section`
       font-size: 1.2rem;
       text-transform: capitalize;
       font-family: 'Montserrat', sans-serif;
+
+      &.selected {
+        color: var(--blue);
+      }
     }
     .icon-git {
       font-size: 2rem;
       color: var(--dark);
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 `
