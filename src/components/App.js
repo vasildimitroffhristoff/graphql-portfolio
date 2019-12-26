@@ -5,6 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import About from './About'
 import Landing from './Landing'
 import Layout from './Layout'
+import Project from './Project'
 import Projects from './Projects'
 
 function App({ location }) {
@@ -26,6 +27,7 @@ function App({ location }) {
                 <Route exact path="/" component={Landing} />
                 <Route path="/about" component={About} />
                 <Route path="/projects" component={Projects} />
+                <Route path="/project/:id" component={Project} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

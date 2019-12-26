@@ -62,11 +62,13 @@ export const Text = styled(Wrapper)`
     margin-bottom: 1rem;
     height: 5rem;
     line-height: 5rem;
-    letter-spacing: 0.4rem;
+    letter-spacing: 0.7rem;
     margin: 0;
     text-transform: uppercase;
     position: relative;
-    font-size:5rem;
+    font-size:4.7rem;
+    font-weight: 700;
+    word-spacing: 0.5rem;
   }
 
   .sub-titles {
@@ -86,7 +88,7 @@ export const Text = styled(Wrapper)`
 
   h4 {
     margin: 0;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     letter-spacing: 0.08rem;
     font-weight: 700;
     font-family: monospace;
