@@ -5,6 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import About from './About'
 import Landing from './Landing'
 import Layout from './Layout'
+import Projects from './Projects'
 
 function App({ location }) {
   const currentKey = location.pathname.split('/')[1] || '/'
@@ -24,6 +25,7 @@ function App({ location }) {
               <Switch location={location}>
                 <Route exact path="/" component={Landing} />
                 <Route path="/about" component={About} />
+                <Route path="/projects" component={Projects} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
