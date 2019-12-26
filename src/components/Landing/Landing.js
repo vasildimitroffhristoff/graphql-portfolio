@@ -1,4 +1,5 @@
 import React from 'react'
+import BlockRevealAnimation from 'react-block-reveal-animation'
 
 import { LandingWrapper, Text } from './LandingStyles'
 
@@ -7,7 +8,9 @@ function LandingComponent() {
     <div className="page">
       <LandingWrapper>
         <Text className="profile">
-          <h2>Vasil Hristov</h2>
+          <BlockRevealAnimation color="#0099ff">
+            <h2>Vasil Hristov</h2>
+          </BlockRevealAnimation>
           <div className="sub-titles">
             <h3>Front-end dev.</h3>
             <h4>[ React, TypeScript, GraphQL ]</h4>

@@ -6,8 +6,9 @@ export const AboutSection = styled.section`
   padding: 8rem 0;
 
   h2 {
-    width: 30rem;
-    margin: 5rem auto;
+    width: 24rem;
+    margin: 3rem auto 5rem auto;
+    display: inline-flex;
 
     .icon {
       font-size: 3rem;
@@ -18,6 +19,7 @@ export const AboutSection = styled.section`
   .me {
     max-width: 28rem;
     margin: 0 auto;
+    display: block;
   }
 
   .resume-link {
@@ -46,6 +48,7 @@ export const AboutSection = styled.section`
   }
 
   p {
+    margin-top: 0;
     margin-bottom: 2rem;
     text-align: left;
 
@@ -61,6 +64,7 @@ export const AboutSection = styled.section`
       transition: all 300ms ease-in-out;
       box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.02);
       border-radius: 1rem;
+      margin-bottom: 2rem;
 
       &:hover {
         transform: translate(-5px, -10px);

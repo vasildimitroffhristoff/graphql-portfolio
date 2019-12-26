@@ -58,32 +58,35 @@ export const Text = styled(Wrapper)`
     display: block;
   }
 
-  /* h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
+  h2 {
+    margin-bottom: 1rem;
+    height: 5rem;
+    line-height: 5rem;
+    letter-spacing: 0.4rem;
+    margin: 0;
     text-transform: uppercase;
-    letter-spacing: 1.85rem;
-    margin: 0 0 1.5rem 0;
-    text-decoration: underline;
-  } */
+    position: relative;
+    font-size:5rem;
+  }
 
   .sub-titles {
     display: flex;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+    margin-top: 0.5rem;
   }
 
   h3 {
     margin: 0 1rem 0 0rem;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 0.1rem;
   }
 
   h4 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     letter-spacing: 0.08rem;
     font-weight: 700;
     font-family: monospace;

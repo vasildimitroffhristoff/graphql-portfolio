@@ -16,14 +16,14 @@ export default function Header() {
               about
             </NavLink>
             <NavLink activeClassName="selected" exact to="/projects">
-              projects
+              work
             </NavLink>
             <a
               href="https://github.com/vasildimitroffhristoff?tab=repositories"
               target="__blank"
               className="git-link"
             >
-              <i className="icon-git fab fa-github-square"></i>
+              <i className="icon-git fab fa-github"></i>
             </a>
           </nav>
         </HeaderContent>

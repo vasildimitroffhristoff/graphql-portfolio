@@ -34,8 +34,7 @@ export const HeaderContent = styled.section`
     }
     .icon-git {
       font-size: 2rem;
-      color: var(--dark);
-      opacity: 0.8;
+      color: #000;
     }
   }
 `
