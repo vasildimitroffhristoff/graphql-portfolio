@@ -6,7 +6,7 @@ export const AboutSection = styled.section`
   padding: 8rem 0;
 
   h2 {
-    width: 24rem;
+    width: 27rem;
     margin: 3rem auto 5rem auto;
     display: inline-flex;
 
@@ -14,6 +14,12 @@ export const AboutSection = styled.section`
       font-size: 3rem;
       margin-right: 2rem;
     }
+  }
+
+  h3 {
+    margin-top: 6rem;
+    font-size: 3rem;
+    text-align: center;
   }
 
   .me {
@@ -30,7 +36,7 @@ export const AboutSection = styled.section`
     background-color: white;
     padding: 2rem;
     border-radius: 10rem;
-    margin: 6rem auto 6rem auto;
+    margin: 4rem auto 6rem auto;
     max-width: 30rem;
     display: block;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
@@ -76,6 +82,38 @@ export const AboutSection = styled.section`
       column-count: 2;
       column-gap: 3rem;
       text-align: justify;
+    }
+  }
+`
+
+export const SocialLinks = styled.div`
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    columns: 3;
+    margin-top: 4rem;
+  }
+
+  li {
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    font-family: monospace;
+
+    a {
+      color: #000;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      i {
+        margin-right: 0.8rem;
+      }
     }
   }
 `

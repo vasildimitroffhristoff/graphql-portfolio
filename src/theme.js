@@ -91,8 +91,13 @@ export const GlobalStyles = createGlobalStyle`
 
   p {
     font-size: 1.8rem;
-    /* font-weight: 300; */
     line-height: 4rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   /* animation transition */

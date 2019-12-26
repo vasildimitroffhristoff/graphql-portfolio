@@ -4,8 +4,7 @@ import Typist from 'react-typist'
 
 import me from '../../assets/me.svg'
 import { Wrapper } from '../../theme'
-import Loading from '../Loading'
-import { AboutSection } from './AboutStyles'
+import { AboutSection, SocialLinks } from './AboutStyles'
 import { ABOUT } from './graphql'
 
 function HeaderComponent() {
@@ -28,42 +27,63 @@ function HeaderComponent() {
                 hideWhenDone: true
               }}
             >
-              <Typist.Delay ms={600} />
+              <Typist.Delay ms={1000} />
               <i className="icon fas fa-terminal"></i>
-              {header}
+              <span>who am I</span>
+              <Typist.Backspace count={8} delay={400} />
+              <span>whoami</span>
             </Typist>
           </h2>
           <p
             className="two-cols"
             dangerouslySetInnerHTML={{ __html: personalDesc }}
           ></p>
-          <a className="resume-link" href="">
-            <i className="icon far fa-file-alt"></i>
-            checkout my resume
-          </a>
+
+          <h3>What I do:</h3>
 
           <p
             className="two-cols"
             dangerouslySetInnerHTML={{ __html: professionalDesc }}
           ></p>
-
-          <div>
-            <h3>Find me on</h3>
+          <SocialLinks>
+            {/* <h3>Find me on:</h3> */}
             <ul>
               <li>
-                <a href="">Git</a>
+                <a href="" target="__blank">
+                  <i className="fab fa-github"></i>Git
+                </a>
               </li>
               <li>
-                <a href="">Behance</a>
+                <a href="" target="__blank">
+                  <i className="fab fa-linkedin"></i>Linkedin
+                </a>
               </li>
               <li>
-                <a href="">Bitbucket</a>
+                <a href="" target="__blank">
+                  <i className="fab fa-behance-square"></i>Behance
+                </a>
               </li>
               <li>
-                <a href="">Email</a>
+                <a href="" target="__blank">
+                  <i className="fab fa-bitbucket"></i>Bitbucket
+                </a>
+              </li>
+              <li>
+                <a href="" target="__blank">
+                  <i className="fab fa-codepen"></i>Codepen
+                </a>
+              </li>
+              <li>
+                <a href="" target="__blank">
+                  <i className="fas fa-envelope-square"></i>Email
+                </a>
               </li>
             </ul>
-          </div>
+          </SocialLinks>
+          <a className="resume-link" href="">
+            <i className="icon far fa-file-alt"></i>
+            checkout my resume
+          </a>
         </Wrapper>
       </AboutSection>
     </div>
