@@ -7,12 +7,11 @@ const transitionAnimation = css`
     transform: translateY(-15px);
   }
   .fade-appear p,
-  .fade-enter p,
-  .fade-appear .profile,
-  .fade-enter .profile {
+  .fade-enter p {
     transform: translateY(-5px);
     opacity: 0;
   }
+
   .fade-appear-active,
   .fade-enter.fade-enter-active {
     opacity: 1;
@@ -20,9 +19,7 @@ const transitionAnimation = css`
     transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
   }
   .fade-appear-active p,
-  .fade-enter.fade-enter-active p,
-  .fade-appear-active .profile,
-  .fade-enter.fade-enter-active .profile {
+  .fade-enter.fade-enter-active p{
     transform: translateY(0);
     opacity: 1;
   }
@@ -39,11 +36,6 @@ const transitionAnimation = css`
     transition: opacity 300ms linear 500ms, transform 300ms ease-out 500ms;
   }
 
-  .fade-appear-active .profile,
-  .fade-enter.fade-enter-active .profile {
-    transition: opacity 300ms linear 500ms, transform 300ms ease-out 500ms;
-  }
-
   .fade-exit {
     opacity: 1;
     transform: translateY(0);
@@ -53,6 +45,26 @@ const transitionAnimation = css`
     transform: translateY(-10px);
     transition: opacity 150ms linear, transform 150ms ease-in;
   }
+
+  /* Landing headings */
+  .fade-appear .landing-subtitle,
+  .fade-enter .landing-subtitle {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+
+  .fade-appear-active .landing-subtitle,
+  .fade-enter.fade-enter-active .landing-subtitle {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .fade-appear-active .landing-subtitle,
+  .fade-enter.fade-enter-active .landing-subtitle {
+    transition: opacity 300ms linear 2000ms, transform 300ms ease-out 2000ms;
+  }
+
+  /* end langind headings */
 `
 
 export const GlobalStyles = createGlobalStyle`

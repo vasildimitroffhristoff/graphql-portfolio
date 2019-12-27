@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Wrapper } from '../../theme'
 
 export const LandingWrapper = styled.header`
-  /* min-height: 65rem; */
   position: relative;
   color: var(--dark);
   overflow: hidden;
@@ -59,7 +58,6 @@ export const Text = styled(Wrapper)`
   }
 
   h2 {
-    margin-bottom: 1rem;
     height: 5rem;
     line-height: 5rem;
     letter-spacing: 0.7rem;
@@ -76,7 +74,7 @@ export const Text = styled(Wrapper)`
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
   }
 
   h3 {
@@ -94,5 +92,6 @@ export const Text = styled(Wrapper)`
     font-family: monospace;
     color: var(--blue);
     background-color: var(--lightBlue);
+    text-transform: capitalize;
   }
 `

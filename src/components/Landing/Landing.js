@@ -7,11 +7,11 @@ function LandingComponent() {
   return (
     <div className="page">
       <LandingWrapper>
-        <Text className="profile">
+        <Text>
           <BlockRevealAnimation color="#0099ff">
             <h2>Vasil Hristov</h2>
           </BlockRevealAnimation>
-          <div className="sub-titles">
+          <div className="sub-titles landing-subtitle">
             <h3>Front-end dev.</h3>
             <h4>[ React, TypeScript, GraphQL ]</h4>
           </div>
