@@ -8,7 +8,8 @@ export const AboutSection = styled.section`
   h2 {
     width: 27rem;
     margin: 3rem auto 5rem auto;
-    display: inline-flex;
+    display: flex;
+    align-items: baseline;
 
     .icon {
       font-size: 3rem;
@@ -64,9 +65,9 @@ export const AboutSection = styled.section`
 
     code {
       background-color: var(--lightYellow);
-      padding: 0.5rem 1.5rem;
+      padding: 1.5rem 4.5rem 1.5rem 3rem;
+      display: inline-block;
       font-family: monospace;
-      display: block;
       transition: all 300ms ease-in-out;
       box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.02);
       border-radius: 1rem;
@@ -80,7 +81,7 @@ export const AboutSection = styled.section`
 
     &.two-cols {
       column-count: 2;
-      column-gap: 3rem;
+      column-gap: 4rem;
       text-align: justify;
     }
   }

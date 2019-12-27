@@ -20,6 +20,7 @@ function HeaderComponent() {
         <Wrapper>
           <img className="me" src={me} alt="me" />
           <h2>
+            <i className="icon fas fa-terminal"></i>
             <Typist
               cursor={{
                 show: true,
@@ -28,7 +29,6 @@ function HeaderComponent() {
               }}
             >
               <Typist.Delay ms={1000} />
-              <i className="icon fas fa-terminal"></i>
               <span>who am I</span>
               <Typist.Backspace count={8} delay={400} />
               <span>whoami</span>
