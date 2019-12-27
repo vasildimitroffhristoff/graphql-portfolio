@@ -1,18 +1,33 @@
 import { useQuery } from '@apollo/react-hooks'
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import BlockRevealAnimation from 'react-block-reveal-animation'
-import { Link } from 'react-router-dom'
+import Carousel, { Modal, ModalGateway } from 'react-images'
+import Gallery from 'react-photo-gallery'
 
 import { Wrapper } from '../../theme'
 import { CURRENT_PROJECT } from './graphql'
 import { ProjectPage } from './ProjectStyles'
 
 export default function Project(props) {
+  const [currentImage, setCurrentImage] = useState(0)
+  const [viewerIsOpen, setViewerIsOpen] = useState(false)
+
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index)
+    setViewerIsOpen(true)
+  }, [])
+
+  const closeLightbox = () => {
+    setCurrentImage(0)
+    setViewerIsOpen(false)
+  }
   const { loading, error, data } = useQuery(CURRENT_PROJECT, {
     variables: {
       id: props.location.pathname.split('/')[2]
     }
   })
+
+  const goBack = () => props.history.goBack()
 
   if (loading || error || !data) return <div>...</div>
 
@@ -27,7 +42,11 @@ export default function Project(props) {
     }
   } = data
 
-  const goBack = () => props.history.goBack()
+  const photos = imageGallery.map(img => ({
+    src: img.url,
+    width: 3,
+    height: 2
+  }))
 
   return (
     <div className="page">
@@ -56,9 +75,25 @@ export default function Project(props) {
             )}
           </BlockRevealAnimation>
 
-          {imageGallery.length
-            ? imageGallery.map(img => <img key={img.url} src={img.url} />)
-            : null}
+          {imageGallery.length ? (
+            <BlockRevealAnimation color="var(--lightBlue)">
+              <Gallery photos={photos} onClick={openLightbox} />
+              <ModalGateway>
+                {viewerIsOpen ? (
+                  <Modal onClose={closeLightbox}>
+                    <Carousel
+                      currentIndex={currentImage}
+                      views={photos.map(x => ({
+                        ...x,
+                        srcset: x.srcSet,
+                        caption: x.title
+                      }))}
+                    />
+                  </Modal>
+                ) : null}
+              </ModalGateway>
+            </BlockRevealAnimation>
+          ) : null}
         </Wrapper>
       </ProjectPage>
     </div>

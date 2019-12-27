@@ -33,7 +33,7 @@ export const ProjectPage = styled.div`
       color: #777;
     }
   }
-/* 
+  /* 
   .block-reveal-animation {
     display: block;
     border-bottom: 1px solid #eee;
@@ -48,7 +48,8 @@ export const ProjectPage = styled.div`
     border-radius: 0.5rem;
 
     &:hover {
-      transform: translateY(-4px);
+      transform: translateX(4px);
+      text-decoration: underline;
     }
 
     a {
@@ -59,11 +60,11 @@ export const ProjectPage = styled.div`
 
     .icon {
       display: inline-block;
-      background-color: salmon;
+      background-color: var(--salmon);
       color: white;
-      width: 2.6rem;
-      height: 2.6rem;
-      line-height: 2.6rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      line-height: 2.2rem;
       border-radius: 2px;
       margin-right: 1rem;
       text-align: center;
