@@ -97,6 +97,8 @@ export const GlobalStyles = createGlobalStyle`
     --lightYellow: #ffa;
     --grey: #d6d6d6;
     --light: #fafafa;
+    --lightSalmon: #ffd5c9;
+    --salmon: salmon;
   }
 
   html {

@@ -1,12 +1,23 @@
+import { useQuery } from '@apollo/react-hooks'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import project2 from '../../assets/project-1.png'
-import project1 from '../../assets/project-2.jpg'
 import { Wrapper } from '../../theme'
-import { LatestProjects, Project, ProjectsSection } from './ProjecstsStyles'
+import { PROJECTS } from './graphql'
+import {
+  BottomLinks,
+  LatestProjects,
+  Project,
+  ProjectsSection
+} from './ProjecstsStyles'
 
 function ProjectsComponent() {
+  const { loading, error, data } = useQuery(PROJECTS)
+
+  if (loading || error || !data) return <div>...</div>
+
+  const { projects } = data
+
   return (
     <div className="page">
       <ProjectsSection>
@@ -21,116 +32,68 @@ function ProjectsComponent() {
           </p>
 
           <LatestProjects>
-            <Project>
-              <div className="img-wrapper">
-                <img src={project1} alt="" />
-              </div>
-              <div className="header">
-                <Link to="project/1">
-                  <h3>Budget app startup.</h3>
-                </Link>
-                <span>1</span>
-              </div>
-            </Project>
+            {projects.map(project => (
+              <Project key={project.id}>
+                <div className="img-wrapper">
+                  <Link to={`project/${project.id}`}>
+                    <img src={project.projectImg.url} alt="" />
+                  </Link>
+                </div>
+                <div className="header">
+                  <h3>
+                    <Link to={`project/${project.id}`}>{project.projectName}</Link>
+                  </h3>
 
-            <Project>
-              <div className="img-wrapper">
-                <img src={project2} alt="" />
-              </div>
-              <div className="header">
-                <h3>Penguin Tribe</h3>
-                <span>2</span>
-              </div>
-            </Project>
-
-            <Project>
-              <div className="img-wrapper">
-                <img src={project1} alt="" />
-              </div>
-              <div className="header">
-                <h3>Mentor App</h3>
-                <span>3</span>
-              </div>
-            </Project>
-            <Project>
-              <div className="img-wrapper">
-                <img src={project1} alt="" />
-              </div>
-              <div className="header">
-                <h3>Penguin Academy Website</h3>
-                <span>4</span>
-              </div>
-            </Project>
-            <Project>
-              <div className="img-wrapper">
-                <img src={project1} alt="" />
-              </div>
-              <div className="header">
-                <h3>Admin Page</h3>
-                <span>5</span>
-              </div>
-            </Project>
+                  <small>
+                    <b>Tech: </b>
+                    {project.techStack}
+                  </small>
+                </div>
+              </Project>
+            ))}
           </LatestProjects>
-
-          <section className="project-links">
-            <div>
-              <h4>
-                <i className="icon fab fa-codepen"></i>Codepen
-              </h4>
-              <a
-                className="link"
-                href="https://codepen.io/vasilhristov/pen/rNawwbe"
-                target="__blank"
-              >
-                Mobile first Template using CSS Grid
-              </a>
-              <a
-                className="link"
-                href="https://codepen.io/vasilhristov/pen/rNawwbe"
-                target="__blank"
-              >
-                CSS Animation
-              </a>
-              <a
-                className="link"
-                href="https://codepen.io/vasilhristov/pen/rNawwbe"
-                target="__blank"
-              >
-                Typography coded animation
-              </a>
-            </div>
-
-            <div>
-              <h4>
-                <i className="icon fas fa-archive"></i>Archive
-              </h4>
-              <a className="link" href="" target="__blank">
-                Portfolio 1
-              </a>
-              <a className="link" href="" target="__blank">
-                ShopSophea
-                <small>
-                  <b>(Liquid, SASS)</b>
-                </small>
-              </a>
-              <a className="link" href="" target="__blank">
-                Adtailor landing page
-              </a>
-              <a className="link" href="" target="__blank">
-                Watch shop
-                <small>
-                  <b>(React, Redux)</b>
-                </small>
-              </a>
-              <a className="link" href="" target="__blank">
-                Quantity Sync
-                <small>
-                  <b>(Shopify, Node.js API)</b>
-                </small>
-              </a>
-            </div>
-          </section>
         </Wrapper>
+        <BottomLinks>
+          <Wrapper>
+            <div className="wrapper">
+              <div className="col">
+                <h4>
+                  <i className="icon fab fa-codepen"></i>Codepen
+                </h4>
+                <a
+                  className="link"
+                  href="https://codepen.io/vasilhristov/pen/rNawwbe"
+                  target="__blank"
+                >
+                  Mobile first Template using CSS Grid
+                </a>
+
+                <a
+                  className="link"
+                  href="https://codepen.io/vasilhristov/pen/rNawwbe"
+                  target="__blank"
+                >
+                  Typography coded animation
+                </a>
+              </div>
+
+              <div className="col">
+                <h4>
+                  <i className="icon fas fa-archive"></i>Archive demos
+                </h4>
+                <a className="link" href="" target="__blank">
+                  Portfolio 1
+                </a>
+                <a className="link" href="" target="__blank">
+                  ShopSophea
+                  <small>
+                    <b>(Liquid, SASS)</b>
+                  </small>
+                </a>
+              </div>
+            </div>
+          </Wrapper>
+        </BottomLinks>
       </ProjectsSection>
     </div>
   )

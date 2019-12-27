@@ -1,41 +1,64 @@
+import { useQuery } from '@apollo/react-hooks'
 import React from 'react'
 import BlockRevealAnimation from 'react-block-reveal-animation'
+import { Link } from 'react-router-dom'
 
-import project1 from '../../assets/project-2.jpg'
 import { Wrapper } from '../../theme'
+import { CURRENT_PROJECT } from './graphql'
 import { ProjectPage } from './ProjectStyles'
 
-export default function Project() {
+export default function Project(props) {
+  const { loading, error, data } = useQuery(CURRENT_PROJECT, {
+    variables: {
+      id: props.location.pathname.split('/')[2]
+    }
+  })
+
+  if (loading || error || !data) return <div>...</div>
+
+  const {
+    project: {
+      projectName,
+      projectImg: { url: imgUrl },
+      projectUrl,
+      introParagraph,
+      imageGallery,
+      description
+    }
+  } = data
+
+  const goBack = () => props.history.goBack()
+
   return (
     <div className="page">
       <ProjectPage>
         <Wrapper>
-          <BlockRevealAnimation color="#ffa">
-            <h2>Project 1</h2>
+          <BlockRevealAnimation color="var(--lightYellow)">
+            <button className="go-back-btn" onClick={goBack}>
+              <i className="fas fa-chevron-left"></i>
+              Return to projects
+            </button>
+            <h2>{projectName}</h2>
+            {projectUrl !== null && (
+              <p className="project-url">
+                <i className="icon fas fa-external-link-alt"></i>
+                <a href={projectUrl} target="__blank">
+                  {projectUrl}
+                </a>
+              </p>
+            )}
           </BlockRevealAnimation>
-          <BlockRevealAnimation color="#6066f0">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
-              praesentium aliquid libero commodi, nobis quod amet numquam quo
-              nam accusamus? Veniam, eum, veritatis quis excepturi pariatur
-              ipsum aperiam est eaque fuga a esse distinctio explicabo enim.
-              Modi facilis sapiente reiciendis magni repellendus eaque,
-              excepturi hic sint iure quisquam distinctio corrupti adipisci
-              incidunt quam architecto provident quia porro soluta
-              exercitationem? Quidem sunt voluptas dolores doloribus corporis
-              temporibus architecto, id animi quia beatae eligendi quae
-              laboriosam adipisci dolor qui est saepe sapiente molestias
-              consequuntur commodi. Ea nobis et id nam. Illo ad velit vitae sunt
-              totam modi cum harum molestias mollitia fuga.
-            </p>
-            <img src={project1} alt="" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-              illo maiores quo corporis commodi possimus assumenda laborum
-              incidunt fuga laudantium architecto enim tempore quisquam eos
-              facilis ratione pariatur, vel natus.
-            </p>
+          <BlockRevealAnimation color="var(--lightBlue)">
+            {introParagraph && <p>{introParagraph}</p>}
+            <img src={imgUrl} alt="" />
+            {description && (
+              <p dangerouslySetInnerHTML={{ __html: description }}></p>
+            )}
           </BlockRevealAnimation>
+
+          {imageGallery.length
+            ? imageGallery.map(img => <img key={img.url} src={img.url} />)
+            : null}
         </Wrapper>
       </ProjectPage>
     </div>

@@ -95,7 +95,7 @@ export const Code = styled.code`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    background-color: var(--lightYellow);
+    background-color: salmon;
     padding: 1rem;
     margin-bottom: 1rem;
     i {
@@ -103,20 +103,8 @@ export const Code = styled.code`
       height: 8px;
       width: 8px;
       border-radius: 2rem;
-      background-color: green;
+      background-color: var(--lightYellow);
       margin-right: 1rem;
-
-      &:nth-of-type(1) {
-        background-color: #ff5959;
-      }
-
-      &:nth-of-type(2) {
-        background-color: lightgreen;
-      }
-
-      &:nth-of-type(3) {
-        background-color: lightgreen;
-      }
     }
   }
 
@@ -128,8 +116,7 @@ export const Code = styled.code`
 
     b {
       text-transform: uppercase;
-      /* margin-bottom: 0.5rem; */
-      line-height: 5rem;
+      line-height: 3.5rem;
     }
   }
 
