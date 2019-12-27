@@ -6,8 +6,8 @@ export const ABOUT = gql`
       status
       id
       header
-      personalDesc
-      professionalDesc
+      whoAmI
+      whatIDo
     }
   }
 `

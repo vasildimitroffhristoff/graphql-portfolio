@@ -5,6 +5,10 @@ export const AboutSection = styled.section`
   background-color: #fafafa;
   padding: 8rem 0;
 
+  header {
+    position: relative;
+  }
+
   h2 {
     width: 27rem;
     margin: 3rem auto 5rem auto;
@@ -18,8 +22,9 @@ export const AboutSection = styled.section`
   }
 
   h3 {
-    margin-top: 6rem;
-    font-size: 3rem;
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+    font-size: 3.6rem;
     text-align: center;
   }
 
@@ -63,40 +68,91 @@ export const AboutSection = styled.section`
       margin: 0 0.8rem;
     }
 
-    code {
-      background-color: var(--lightYellow);
-      padding: 1.5rem 4.5rem 1.5rem 3rem;
-      display: inline-block;
-      font-family: monospace;
-      transition: all 300ms ease-in-out;
-      box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.02);
-      border-radius: 1rem;
-      margin-bottom: 2rem;
-
-      &:hover {
-        transform: translate(-5px, -10px);
-        /* font-size: 2rem; */
-      }
-    }
-
     &.two-cols {
       column-count: 2;
-      column-gap: 4rem;
+      column-gap: 5rem;
       text-align: justify;
     }
   }
 `
 
-export const SocialLinks = styled.div`
+export const Code = styled.code`
   text-align: left;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  background-color: white;
+  /* padding: 1.5rem 4.5rem 1.5rem 3rem; */
+  display: inline-block;
+  font-family: monospace;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.03);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  position: absolute;
+  top: -5rem;
+  left: 10rem;
+  overflow: hidden;
+
+  span {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: var(--lightYellow);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    i {
+      display: block;
+      height: 8px;
+      width: 8px;
+      border-radius: 2rem;
+      background-color: green;
+      margin-right: 1rem;
+
+      &:nth-of-type(1) {
+        background-color: #ff5959;
+      }
+
+      &:nth-of-type(2) {
+        background-color: lightgreen;
+      }
+
+      &:nth-of-type(3) {
+        background-color: lightgreen;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0 2.5rem 1.5rem 2rem;
+    font-size: 1.7rem;
+    line-height: 3rem;
+
+    b {
+      text-transform: uppercase;
+      /* margin-bottom: 0.5rem; */
+      line-height: 5rem;
+    }
+  }
+
+  &:hover {
+    transform: translate(-5px, -10px);
+  }
+`
+
+export const SocialLinks = styled.div`
+  h3 {
+    margin-top: 6rem;
+  }
+  .links-wrapper {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
   ul {
     columns: 3;
-    margin-top: 4rem;
+    margin-top: 0rem;
   }
 
   li {

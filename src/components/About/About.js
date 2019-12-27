@@ -4,7 +4,7 @@ import Typist from 'react-typist'
 
 import me from '../../assets/me.svg'
 import { Wrapper } from '../../theme'
-import { AboutSection, SocialLinks } from './AboutStyles'
+import { AboutSection, Code, SocialLinks } from './AboutStyles'
 import { ABOUT } from './graphql'
 
 function HeaderComponent() {
@@ -13,72 +13,89 @@ function HeaderComponent() {
   })
   if (loading || error || !data) return <div>...</div>
 
-  const { header, personalDesc, professionalDesc } = data.about
+  const { whoAmI, whatIDo } = data.about
   return (
     <div className="page">
       <AboutSection>
         <Wrapper>
-          <img className="me" src={me} alt="me" />
-          <h2>
-            <i className="icon fas fa-terminal"></i>
-            <Typist
-              cursor={{
-                show: true,
-                blink: true,
-                hideWhenDone: true
-              }}
-            >
-              <Typist.Delay ms={1000} />
-              <span>who am I</span>
-              <Typist.Backspace count={8} delay={400} />
-              <span>whoami</span>
-            </Typist>
-          </h2>
+          <header>
+            <img className="me" src={me} alt="me" />
+            <h2>
+              <i className="icon fas fa-terminal"></i>
+              <Typist
+                cursor={{
+                  show: true,
+                  blink: true,
+                  hideWhenDone: true
+                }}
+              >
+                <Typist.Delay ms={1000} />
+                <span>who am I</span>
+                <Typist.Backspace count={8} delay={400} />
+                <span>whoami</span>
+              </Typist>
+            </h2>
+
+            <Code className="greeting-code">
+              <span>
+                <i></i>
+                <i></i>
+                <i></i>
+              </span>
+              <p>
+                <b>haveWeMet === true</b> <br />? 'Nice to see you again!'{' '}
+                <br />: 'Nice to meet you!';
+              </p>
+            </Code>
+          </header>
+
           <p
             className="two-cols"
-            dangerouslySetInnerHTML={{ __html: personalDesc }}
+            dangerouslySetInnerHTML={{ __html: whoAmI }}
           ></p>
 
-          <h3>What I do:</h3>
+          <h3>What do I do?</h3>
 
           <p
             className="two-cols"
-            dangerouslySetInnerHTML={{ __html: professionalDesc }}
+            dangerouslySetInnerHTML={{ __html: whatIDo }}
           ></p>
           <SocialLinks>
-            {/* <h3>Find me on:</h3> */}
-            <ul>
-              <li>
-                <a href="" target="__blank">
-                  <i className="fab fa-github"></i>Git
-                </a>
-              </li>
-              <li>
-                <a href="" target="__blank">
-                  <i className="fab fa-linkedin"></i>Linkedin
-                </a>
-              </li>
-              <li>
-                <a href="" target="__blank">
-                  <i className="fab fa-behance-square"></i>Behance
-                </a>
-              </li>
-              <li>
-                <a href="" target="__blank">
-                  <i className="fab fa-bitbucket"></i>Bitbucket
-                </a>
-              </li>
-              <li>
-                <a href="" target="__blank">
-                  <i className="fab fa-codepen"></i>Codepen
-                </a>
-              </li>
-              <li>
-                <a href="" target="__blank">
-                  <i className="fas fa-envelope-square"></i>Email
-                </a>
-              </li>
-            </ul>
+            <h3>Find me on:</h3>
+            <div className="links-wrapper">
+              <ul>
+                <li>
+                  <a href="" target="__blank">
+                    <i className="fab fa-github"></i>Git
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="__blank">
+                    <i className="fab fa-linkedin"></i>Linkedin
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="__blank">
+                    <i className="fab fa-behance-square"></i>Behance
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="__blank">
+                    <i className="fab fa-bitbucket"></i>Bitbucket
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="__blank">
+                    <i className="fab fa-codepen"></i>Codepen
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="__blank">
+                    <i className="fas fa-envelope-square"></i>Email
+                  </a>
+                </li>
+              </ul>
+            </div>
           </SocialLinks>
           <a className="resume-link" href="">
             <i className="icon far fa-file-alt"></i>
