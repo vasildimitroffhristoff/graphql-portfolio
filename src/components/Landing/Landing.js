@@ -13,7 +13,7 @@ function LandingComponent() {
           </BlockRevealAnimation>
           <div className="sub-titles landing-subtitle">
             <h3>Front-end dev.</h3>
-            <h4>[React, TypeScript, GraphQL]</h4>
+            <h4>[React, TypeScript, GraphQL ...]</h4>
           </div>
         </Text>
         <svg

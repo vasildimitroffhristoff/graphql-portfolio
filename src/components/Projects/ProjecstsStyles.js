@@ -35,7 +35,7 @@ export const ProjectsSection = styled.section`
     &:hover {
       /* text-decoration: underline; */
       transform: translateX(5px);
-      box-shadow: inset -30rem 0 0 var(--lightYellow);
+      box-shadow: inset 60rem 0 0 var(--lightYellow);
     }
   }
 `

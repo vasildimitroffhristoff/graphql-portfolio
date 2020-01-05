@@ -41,7 +41,7 @@ export const AboutSection = styled.section`
     border-radius: 3px;
     box-shadow: none;
     filter: opacity(0.4) grayscale(1) blur(1px);
-    transition: all 200ms;
+    transition: all 150ms ease-in-out;
 
     &:hover {
       filter: unset;

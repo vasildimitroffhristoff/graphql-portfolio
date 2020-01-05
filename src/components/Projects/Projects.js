@@ -41,7 +41,9 @@ function ProjectsComponent() {
                 </div>
                 <div className="header">
                   <h3>
-                    <Link to={`project/${project.id}`}>{project.projectName}</Link>
+                    <Link to={`project/${project.id}`}>
+                      {project.projectName}
+                    </Link>
                   </h3>
 
                   <small>
@@ -58,6 +60,69 @@ function ProjectsComponent() {
             <div className="wrapper">
               <div className="col">
                 <h4>
+                  <i className="icon fas fa-archive"></i>Archive
+                </h4>
+
+                <a
+                  className="link"
+                  href="https://vasillabs.bitbucket.io/"
+                  target="__blank"
+                >
+                  Portfolio 1
+                </a>
+                <a
+                  className="link"
+                  href="https://blooming-earth-56740.herokuapp.com/"
+                  target="__blank"
+                >
+                  Quantity Sync
+                  <small>
+                    <b> / Shopify API, Polaris React, Express.js</b>
+                  </small>
+                </a>
+                <a
+                  className="link"
+                  href="https://shopsophea.com/"
+                  target="__blank"
+                >
+                  ShopSophea
+                  <small>
+                    <b> / Liquid, SASS</b>
+                  </small>
+                </a>
+                <a
+                  className="link"
+                  href="https://polar-eyrie-50062.herokuapp.com/"
+                  target="__blank"
+                >
+                  WatchMe
+                  <small>
+                    <b> / React, Redux</b>
+                  </small>
+                </a>
+                <a
+                  className="link"
+                  href="https://thawing-caverns-24436.herokuapp.com/"
+                  target="__blank"
+                >
+                  Adtailor
+                  <small>
+                    <b> / JavaScript, jQuery</b>
+                  </small>
+                </a>
+                <a
+                  className="link"
+                  href="https://frozen-ravine-82393.herokuapp.com/"
+                  target="__blank"
+                >
+                  Adtailor CRM
+                  <small>
+                    <b> / JavaScript, jQuery</b>
+                  </small>
+                </a>
+              </div>
+              <div className="col">
+                <h4>
                   <i className="icon fab fa-codepen"></i>Codepen
                 </h4>
                 <a
@@ -66,29 +131,6 @@ function ProjectsComponent() {
                   target="__blank"
                 >
                   Mobile first Template using CSS Grid
-                </a>
-
-                <a
-                  className="link"
-                  href="https://codepen.io/vasilhristov/pen/rNawwbe"
-                  target="__blank"
-                >
-                  Typography coded animation
-                </a>
-              </div>
-
-              <div className="col">
-                <h4>
-                  <i className="icon fas fa-archive"></i>Archive demos
-                </h4>
-                <a className="link" href="" target="__blank">
-                  Portfolio 1
-                </a>
-                <a className="link" href="" target="__blank">
-                  ShopSophea
-                  <small>
-                    <b>(Liquid, SASS)</b>
-                  </small>
                 </a>
               </div>
             </div>
