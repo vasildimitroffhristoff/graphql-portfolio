@@ -1,19 +1,27 @@
 import { useQuery } from '@apollo/react-hooks'
-import React from 'react'
+import React, { useState } from 'react'
 import Typist from 'react-typist'
 
+import gitCommits from '../../assets/git-commits.png'
 import me from '../../assets/me.svg'
 import { Wrapper } from '../../theme'
 import { AboutSection, Code, SocialLinks } from './AboutStyles'
 import { ABOUT } from './graphql'
 
-function HeaderComponent() {
+function AboutComponent() {
+  const [greetingText, setGreetingText] = useState('')
   const { loading, error, data } = useQuery(ABOUT, {
     variables: { id: 'ck4h6pxfvasyx0b66zim26s2i' }
   })
   if (loading || error || !data) return <div>...</div>
 
   const { whoAmI, whatIDo } = data.about
+
+  const handleGreetingText = haveWeMet => {
+    const text = haveWeMet ? `Nice to see you!` : `Nice to meet you!`
+    setGreetingText(text)
+  }
+
   return (
     <div className="page">
       <AboutSection>
@@ -22,18 +30,25 @@ function HeaderComponent() {
             <img className="me" src={me} alt="me" />
             <h2>
               <i className="icon fas fa-terminal"></i>
-              <Typist
-                cursor={{
-                  show: true,
-                  blink: true,
-                  hideWhenDone: true
-                }}
-              >
-                <Typist.Delay ms={1000} />
-                <span>who am I</span>
-                <Typist.Backspace count={8} delay={400} />
-                <span>whoami</span>
-              </Typist>
+              {greetingText.length === 0 && (
+                <Typist
+                  cursor={{
+                    show: true,
+                    blink: true,
+                    hideWhenDone: true
+                  }}
+                >
+                  <Typist.Delay ms={1000} />
+                  <span>who am I</span>
+                  <Typist.Backspace count={8} delay={400} />
+                  <span>whoami</span>
+                </Typist>
+              )}
+              {greetingText.length > 0 && (
+                <Typist>
+                  <span style={{ fontSize: '2.8rem' }}>{greetingText}</span>
+                </Typist>
+              )}
             </h2>
 
             <Code className="greeting-code">
@@ -43,8 +58,25 @@ function HeaderComponent() {
                 <i></i>
               </span>
               <p>
-                <b>haveWeMet === true</b> <br />? 'Nice to see you again!'{' '}
-                <br />: 'Nice to meet you!';
+                <b>
+                  {`have_We_Met.before`}
+                  <button
+                    className="btn-boolean true"
+                    onClick={() => handleGreetingText(true)}
+                  >
+                    true
+                  </button>
+                  <button
+                    className="btn-boolean false"
+                    onClick={() => handleGreetingText(false)}
+                  >
+                    false
+                  </button>
+                </b>
+                <br />
+                &nbsp;? <i>'Nice to see you!'</i>
+                <br />
+                &nbsp;: <i>'Nice to meet you!';</i>
               </p>
             </Code>
           </header>
@@ -54,12 +86,13 @@ function HeaderComponent() {
             dangerouslySetInnerHTML={{ __html: whoAmI }}
           ></p>
 
-          <h3>What do I do?</h3>
+          {/* <h3>What do I do?</h3>
+          <img className="git-commits" src={gitCommits} alt="" />
 
           <p
             className="two-cols"
             dangerouslySetInnerHTML={{ __html: whatIDo }}
-          ></p>
+          ></p> */}
           <SocialLinks>
             <h3>Find me on:</h3>
             <div className="links-wrapper">
@@ -107,4 +140,4 @@ function HeaderComponent() {
   )
 }
 
-export default HeaderComponent
+export default AboutComponent

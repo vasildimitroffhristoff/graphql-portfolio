@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ProjectsSection = styled.section`
   text-align: center;
-  background-color: #fafafa;
+  background-color: var(--greyIsh);
   padding: 8rem 0 0 0;
 
   h2 {

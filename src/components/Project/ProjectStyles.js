@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const ProjectPage = styled.div`
+  background-color: var(--greyIsh); 
+  
   h2 {
     margin-bottom: 0;
   }
@@ -20,7 +22,8 @@ export const ProjectPage = styled.div`
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 8rem;
+    margin-bottom: 6rem;
+    margin-top: 4rem;
     padding-left: 0;
 
     i {
@@ -30,14 +33,9 @@ export const ProjectPage = styled.div`
       line-height: 1.6rem;
       border-radius: 2px;
       margin-right: 1rem;
-      color: #777;
+      color: var(--dark);
     }
   }
-  /* 
-  .block-reveal-animation {
-    display: block;
-    border-bottom: 1px solid #eee;
-  } */
 
   .project-url {
     transition: all 300ms ease-in-out;

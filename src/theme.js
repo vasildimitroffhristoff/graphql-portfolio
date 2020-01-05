@@ -99,6 +99,7 @@ export const GlobalStyles = createGlobalStyle`
     --light: #fafafa;
     --lightSalmon: #ffd5c9;
     --salmon: salmon;
+    --greyIsh: #f0f1f6;
   }
 
   html {

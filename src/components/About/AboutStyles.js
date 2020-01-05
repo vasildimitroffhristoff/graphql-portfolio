@@ -14,6 +14,7 @@ export const AboutSection = styled.section`
     margin: 3rem auto 5rem auto;
     display: flex;
     align-items: baseline;
+    white-space: nowrap;
 
     .icon {
       font-size: 3rem;
@@ -22,7 +23,7 @@ export const AboutSection = styled.section`
   }
 
   h3 {
-    margin-top: 0rem;
+    margin-top: 5rem;
     margin-bottom: 3rem;
     font-size: 3.6rem;
     text-align: center;
@@ -32,6 +33,21 @@ export const AboutSection = styled.section`
     max-width: 28rem;
     margin: 0 auto;
     display: block;
+  }
+
+  .git-commits {
+    max-width: 100%;
+    margin: 0 0 3rem 0;
+    border-radius: 3px;
+    box-shadow: none;
+    filter: opacity(0.4) grayscale(1) blur(1px);
+    transition: all 200ms;
+
+    &:hover {
+      filter: unset;
+      box-shadow: none;
+      box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.08);
+    }
   }
 
   .resume-link {
@@ -79,7 +95,6 @@ export const AboutSection = styled.section`
 export const Code = styled.code`
   text-align: left;
   background-color: white;
-  /* padding: 1.5rem 4.5rem 1.5rem 3rem; */
   display: inline-block;
   font-family: monospace;
   transition: all 300ms ease-in-out;
@@ -88,7 +103,7 @@ export const Code = styled.code`
   margin-bottom: 2rem;
   position: absolute;
   top: -5rem;
-  left: 10rem;
+  left: 6rem;
   overflow: hidden;
 
   span {
@@ -115,13 +130,50 @@ export const Code = styled.code`
     line-height: 3rem;
 
     b {
-      text-transform: uppercase;
+      text-transform: lowercase;
       line-height: 3.5rem;
+      font-size: 2rem;
+    }
+  }
+
+  .btn-boolean {
+    &:first-of-type {
+      margin-left: 1rem;
+    }
+    margin: 0 0.25rem;
+    outline: none;
+    border-radius: 3px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+
+    &.true {
+      color: green;
+      border-color: green;
+
+      &:hover {
+        background-color: green;
+        color: #fff;
+      }
+    }
+    &.false {
+      color: palevioletred;
+      border-color: palevioletred;
+
+      &:hover {
+        background-color: palevioletred;
+        color: #fff;
+      }
     }
   }
 
   &:hover {
-    transform: translate(-5px, -10px);
+    transform: translate(-5px, 0);
+
+    .btn-boolean {
+      opacity: 1;
+    }
   }
 `
 
