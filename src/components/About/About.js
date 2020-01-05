@@ -98,32 +98,32 @@ function AboutComponent() {
             <div className="links-wrapper">
               <ul>
                 <li>
-                  <a href="" target="__blank">
+                  <a href="https://github.com/vasildimitroffhristoff" target="__blank">
                     <i className="fab fa-github"></i>Git
                   </a>
                 </li>
                 <li>
-                  <a href="" target="__blank">
+                  <a href="https://www.linkedin.com/in/vasil-hristoff-07186399/" target="__blank">
                     <i className="fab fa-linkedin"></i>Linkedin
                   </a>
                 </li>
                 <li>
-                  <a href="" target="__blank">
+                  <a href="https://www.behance.net/vasilhristoff" target="__blank">
                     <i className="fab fa-behance-square"></i>Behance
                   </a>
                 </li>
                 <li>
-                  <a href="" target="__blank">
+                  <a href="https://bitbucket.org/vasillabs" target="__blank">
                     <i className="fab fa-bitbucket"></i>Bitbucket
                   </a>
                 </li>
                 <li>
-                  <a href="" target="__blank">
+                  <a href="https://codepen.io/vasilhristov" target="__blank">
                     <i className="fab fa-codepen"></i>Codepen
                   </a>
                 </li>
                 <li>
-                  <a href="" target="__blank">
+                  <a href="mailto:vasildimitrovhristov@gmail.com" target="__blank">
                     <i className="fas fa-envelope-square"></i>Email
                   </a>
                 </li>
