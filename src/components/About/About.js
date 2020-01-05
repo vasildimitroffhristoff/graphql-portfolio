@@ -4,6 +4,7 @@ import Typist from 'react-typist'
 
 import gitCommits from '../../assets/git-commits.png'
 import me from '../../assets/me.svg'
+import Resume from '../../assets/vh_cv.pdf'
 import { Wrapper } from '../../theme'
 import { AboutSection, Code, SocialLinks } from './AboutStyles'
 import { ABOUT } from './graphql'
@@ -86,29 +87,38 @@ function AboutComponent() {
             dangerouslySetInnerHTML={{ __html: whoAmI }}
           ></p>
 
-          {/* <h3>What do I do?</h3>
+          <h3>What do I do?</h3>
           <img className="git-commits" src={gitCommits} alt="" />
 
           <p
             className="two-cols"
             dangerouslySetInnerHTML={{ __html: whatIDo }}
-          ></p> */}
+          ></p>
           <SocialLinks>
             <h3>Find me on:</h3>
             <div className="links-wrapper">
               <ul>
                 <li>
-                  <a href="https://github.com/vasildimitroffhristoff" target="__blank">
+                  <a
+                    href="https://github.com/vasildimitroffhristoff"
+                    target="__blank"
+                  >
                     <i className="fab fa-github"></i>Git
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/vasil-hristoff-07186399/" target="__blank">
+                  <a
+                    href="https://www.linkedin.com/in/vasil-hristoff-07186399/"
+                    target="__blank"
+                  >
                     <i className="fab fa-linkedin"></i>Linkedin
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.behance.net/vasilhristoff" target="__blank">
+                  <a
+                    href="https://www.behance.net/vasilhristoff"
+                    target="__blank"
+                  >
                     <i className="fab fa-behance-square"></i>Behance
                   </a>
                 </li>
@@ -123,14 +133,17 @@ function AboutComponent() {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:vasildimitrovhristov@gmail.com" target="__blank">
+                  <a
+                    href="mailto:vasildimitrovhristov@gmail.com"
+                    target="__blank"
+                  >
                     <i className="fas fa-envelope-square"></i>Email
                   </a>
                 </li>
               </ul>
             </div>
           </SocialLinks>
-          <a className="resume-link" href="">
+          <a className="resume-link" href={Resume} target="_blank">
             <i className="icon far fa-file-alt"></i>
             checkout my resume
           </a>
