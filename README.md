@@ -1,4 +1,4 @@
-# graphql-portfolio
+# GraphCMS-portfolio
 
 My personal portfolio website built using with the following tech:
 - CRA
