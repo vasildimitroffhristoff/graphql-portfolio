@@ -72,6 +72,7 @@ function AboutComponent() {
                     <i className="fab fa-github"></i>Git
                   </a>
                 </li>
+
                 <li>
                   <a
                     href="https://www.linkedin.com/in/vasil-hristoff-07186399/"
@@ -83,15 +84,6 @@ function AboutComponent() {
                 </li>
                 <li>
                   <a
-                    href="https://www.behance.net/vasilhristoff"
-                    rel="noopener noreferrer"
-                    target="__blank"
-                  >
-                    <i className="fab fa-behance-square"></i>Behance
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="https://bitbucket.org/vasillabs"
                     rel="noopener noreferrer"
                     target="__blank"
@@ -99,6 +91,16 @@ function AboutComponent() {
                     <i className="fab fa-bitbucket"></i>Bitbucket
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://www.behance.net/vasilhristoff"
+                    rel="noopener noreferrer"
+                    target="__blank"
+                  >
+                    <i className="fab fa-behance-square"></i>Behance
+                  </a>
+                </li>
+
                 <li>
                   <a
                     href="https://codepen.io/vasilhristov"

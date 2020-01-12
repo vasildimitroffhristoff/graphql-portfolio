@@ -85,16 +85,16 @@ export const AboutSection = styled.section`
     max-width: 30rem;
     display: block;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    transition: all 300ms ease-in-out;
+    transition: all 200ms ease-in-out;
 
     .icon {
       margin-right: 1rem;
     }
 
     &:hover {
-      opacity: 0.8;
-      box-shadow: 0 4px 0px rgba(0, 0, 0, 0.03);
-      transform: translateY(-4px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: var(--blue);
+      color: white;
     }
   }
 
@@ -130,7 +130,7 @@ export const AboutSection = styled.section`
 export const SocialLinks = styled.div`
   h3 {
     margin-top: 6rem;
-    
+
     @media only screen and (max-width: 768px) {
       margin-bottom: 2rem;
       font-size: 3rem;
