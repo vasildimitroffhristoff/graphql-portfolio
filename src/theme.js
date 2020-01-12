@@ -1,7 +1,8 @@
 import styled, { createGlobalStyle, css } from 'styled-components'
 
 const transitionAnimation = css`
-  .fade-enter {
+  .fade-enter,
+  .fade-appear {
     opacity: 0;
     z-index: 1;
     transform: translateY(-15px);
@@ -13,30 +14,30 @@ const transitionAnimation = css`
   }
 
   .fade-appear-active,
-  .fade-enter.fade-enter-active {
+  .fade-enter-active {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
   }
   .fade-appear-active p,
-  .fade-enter.fade-enter-active p {
+  .fade-enter-active p {
     transform: translateY(0);
     opacity: 1;
   }
   .fade-appear-active p:nth-child(2),
-  .fade-enter.fade-enter-active p:nth-child(2) {
+  .fade-enter-active p:nth-child(2) {
     transition: opacity 300ms linear 300ms, transform 300ms ease-out 300ms;
   }
   .fade-appear-active p:nth-child(3),
-  .fade-enter.fade-enter-active p:nth-child(3) {
+  .fade-enter-active p:nth-child(3) {
     transition: opacity 300ms linear 400ms, transform 300ms ease-out 400ms;
   }
   .fade-appear-active p:nth-child(4),
-  .fade-enter.fade-enter-active p:nth-child(4) {
+  .fade-enter-active p:nth-child(4) {
     transition: opacity 300ms linear 500ms, transform 300ms ease-out 500ms;
   }
 
-  .fade-exit {
+  /* .fade-exit {
     opacity: 1;
     transform: translateY(0);
   }
@@ -44,7 +45,7 @@ const transitionAnimation = css`
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 150ms linear, transform 150ms ease-in;
-  }
+  } */
 
   /* Landing headings */
   .fade-appear .landing-subtitle,
@@ -54,36 +55,30 @@ const transitionAnimation = css`
   }
 
   .fade-appear-active .landing-subtitle,
-  .fade-enter.fade-enter-active .landing-subtitle {
+  .fade-enter-active .landing-subtitle {
     transform: translateY(0);
     opacity: 1;
   }
 
   .fade-appear-active .landing-subtitle,
-  .fade-enter.fade-enter-active .landing-subtitle {
+  .fade-enter-active .landing-subtitle {
     transition: opacity 300ms linear 2000ms, transform 300ms ease-out 2000ms;
   }
   /* end langind headings */
 
   /* greeting-code */
-  .greeting-code {
-    /* opacity: 0; */
-  }
+  .greeting-code,
   .fade-appear .greeting-code,
   .fade-enter .greeting-code {
-    transform: translateX(-15px);
     opacity: 0;
+    z-index: 1;
+    transform: translateY(-15px);
   }
 
-  .fade-appear-active .greeting-code,
-  .fade-enter.fade-enter-active .greeting-code {
-    transform: translateX(0);
+  .fade-appear-done .greeting-code,
+  .fade-enter-done .greeting-code {
     opacity: 1;
-  }
-
-  .fade-appear-active .greeting-code,
-  .fade-enter.fade-enter-active .greeting-code {
-    transition: opacity 300ms linear 3500ms, transform 300ms ease-out 3500ms;
+    transform: translateY(0);
   }
   /* end greeting-code */
 `
@@ -136,9 +131,23 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
+  .deprecated, .deprecated > * {
+    text-decoration: line-through;
+    /* opacity: 0.8; */
+    color: var(--grey)
+  }
+
   /* animation transition */
   ${transitionAnimation}
   /* end animation transition */
+
+  .Typist{
+    display: inline-block;
+  }
+
+  .block-reveal-animation {
+    display: block !important;
+  }
   `
 
 export const Wrapper = styled.div`

@@ -12,8 +12,13 @@ function LandingComponent() {
             <h2>Vasil Hristov</h2>
           </BlockRevealAnimation>
           <div className="sub-titles landing-subtitle">
-            <h3>Front-end dev.</h3>
-            <h4>[React, TypeScript, GraphQL ...]</h4>
+            {/* <h3>FRONT-END DEVELOPER  </h3> */}
+            <h4>
+              <span>{'{'}</span>
+              <b>front_end_developer : </b>["<i>React</i>{' '}
+              <i className="fab fa-react"></i>" , ...<i>other</i>]
+              <span>{'}'}</span>
+            </h4>
           </div>
         </Text>
         <svg

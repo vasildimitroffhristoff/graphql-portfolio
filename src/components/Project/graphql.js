@@ -14,6 +14,9 @@ export const CURRENT_PROJECT = gql`
       imageGallery {
         url
       }
+      video {
+        url
+      }
       description
     }
   }

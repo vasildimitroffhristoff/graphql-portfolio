@@ -60,11 +60,11 @@ export const Text = styled(Wrapper)`
   h2 {
     height: 5rem;
     line-height: 5rem;
-    letter-spacing: 0.7rem;
+    letter-spacing: 0.9rem;
     margin: 0;
     text-transform: uppercase;
     position: relative;
-    font-size:4.7rem;
+    font-size: 4.7rem;
     font-weight: 700;
     word-spacing: 0.5rem;
   }
@@ -73,25 +73,36 @@ export const Text = styled(Wrapper)`
     display: flex;
     align-items: center;
     justify-content: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-top: 1.5rem;
   }
 
   h3 {
     margin: 0 1rem 0 0rem;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     letter-spacing: 0.1rem;
   }
 
   h4 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
     letter-spacing: 0.08rem;
-    font-weight: 700;
+    font-weight: 300;
     font-family: monospace;
-    color: var(--blue);
-    background-color: var(--lightBlue);
-    text-transform: capitalize;
+
+    span {
+      font-size: 3.2rem;
+      padding: 0 0.5rem;
+      font-weight: 300;
+      color: var(--salmon);
+      position: relative;
+      top: 0.4rem;
+    }
+
+    b {
+      font-weight: 700;
+    }
   }
 `

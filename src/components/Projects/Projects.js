@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { Wrapper } from '../../theme'
+import Loading from '../Loading'
 import { PROJECTS } from './graphql'
 import {
   BottomLinks,
@@ -14,7 +15,7 @@ import {
 function ProjectsComponent() {
   const { loading, error, data } = useQuery(PROJECTS)
 
-  if (loading || error || !data) return <div>...</div>
+  if (loading || error || !data) return <Loading />
 
   const { projects } = data
 
@@ -24,35 +25,35 @@ function ProjectsComponent() {
         <Wrapper>
           <h2>What I've been up to?</h2>
           <p>
-            I am currently working as <b>front-end developer</b>. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Voluptatibus quasi a
-            mollitia molestias cupiditate odit consequuntur, reprehenderit
-            adipisci itaque non perferendis blanditiis ratione eum eveniet error
-            est odio qui et.
+            Here you can find out more about the projects I've been involved
+            into during my professional career, personal projects, demos.
           </p>
 
           <LatestProjects>
-            {projects.map(project => (
-              <Project key={project.id}>
-                <div className="img-wrapper">
-                  <Link to={`project/${project.id}`}>
-                    <img src={project.projectImg.url} alt="" />
-                  </Link>
-                </div>
-                <div className="header">
-                  <h3>
-                    <Link to={`project/${project.id}`}>
-                      {project.projectName}
-                    </Link>
-                  </h3>
+            {projects.map(
+              project =>
+                project.status === 'PUBLISHED' && (
+                  <Project key={project.id}>
+                    <div className="img-wrapper">
+                      <Link to={`project/${project.id}`}>
+                        <img src={project.projectImg.url} alt="" />
+                      </Link>
+                    </div>
+                    <div className="header">
+                      <h3>
+                        <Link to={`project/${project.id}`}>
+                          {project.projectName}
+                        </Link>
+                      </h3>
 
-                  <small>
-                    <b>Tech: </b>
-                    {project.techStack}
-                  </small>
-                </div>
-              </Project>
-            ))}
+                      <small>
+                        <b>Tech: </b>
+                        {project.techStack}
+                      </small>
+                    </div>
+                  </Project>
+                )
+            )}
           </LatestProjects>
         </Wrapper>
         <BottomLinks>
@@ -68,7 +69,7 @@ function ProjectsComponent() {
                   href="https://vasillabs.bitbucket.io/"
                   target="__blank"
                 >
-                  Portfolio 1
+                  Old portfolio
                 </a>
                 <a
                   className="link"
@@ -131,6 +132,13 @@ function ProjectsComponent() {
                   target="__blank"
                 >
                   Mobile first Template using CSS Grid
+                </a>
+                <a
+                  className="link"
+                  href="https://codesandbox.io/s/serene-wright-chzr5?fontsize=14&hidenavigation=1&theme=dark"
+                  target="__blank"
+                >
+                  Time log chart (React, TypeScript, Chart.js)
                 </a>
               </div>
             </div>

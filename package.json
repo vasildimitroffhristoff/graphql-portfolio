@@ -19,7 +19,8 @@
     "react-scripts": "3.3.0",
     "react-transition-group": "^4.3.0",
     "react-typist": "^2.0.5",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "video-react": "^0.14.1"
   },
   "scripts": {
     "start": "react-scripts start",

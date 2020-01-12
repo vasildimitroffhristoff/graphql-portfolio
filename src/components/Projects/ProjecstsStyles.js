@@ -92,7 +92,7 @@ export const Project = styled.div`
   .img-wrapper {
     width: 100%;
     height: 20rem;
-    border-radius: 1.4rem;
+    border-radius: 0.8rem;
     overflow: hidden;
     margin: 0 auto;
     text-align: center;
