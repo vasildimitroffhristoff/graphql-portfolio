@@ -15,7 +15,7 @@ function LandingComponent() {
             <h4>
               <span>{'{'}</span>
               <b>front_end_developer : </b>["<i>React</i>{' '}
-              <i className="fab fa-react"></i>" , ...<i>other</i>]
+              <i className="fab fa-react"></i>", ...<i>other</i>]
               <span>{'}'}</span>
             </h4>
           </div>

@@ -8,6 +8,10 @@ export const AboutSection = styled.section`
   header {
     position: relative;
     min-height: 33rem;
+
+    @media only screen and (max-width: 768px) {
+      min-height: 25rem;
+    }
   }
 
   h2 {
@@ -17,9 +21,18 @@ export const AboutSection = styled.section`
     align-items: baseline;
     white-space: nowrap;
 
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 2rem;
+      font-size: 3rem;
+      justify-content: center;
+    }
+
     .icon {
       font-size: 3rem;
       margin-right: 2rem;
+      @media only screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -28,13 +41,21 @@ export const AboutSection = styled.section`
     margin-bottom: 3rem;
     font-size: 3.6rem;
     text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 2rem;
+      font-size: 3rem;
+    }
   }
 
   .me {
-    /* max-width: 28rem; */
     height: 20rem;
     margin: 0 auto;
     display: block;
+
+    @media only screen and (max-width: 768px) {
+      height: 15rem;
+    }
   }
 
   .git-commits {
@@ -90,6 +111,14 @@ export const AboutSection = styled.section`
       column-count: 2;
       column-gap: 5rem;
       text-align: justify;
+      @media only screen and (max-width: 768px) {
+        column-count: 1;
+        text-align: center;
+
+        p {
+          text-align: center;
+        }
+      }
 
       a {
         color: var(--dark);
@@ -101,6 +130,11 @@ export const AboutSection = styled.section`
 export const SocialLinks = styled.div`
   h3 {
     margin-top: 6rem;
+    
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 2rem;
+      font-size: 3rem;
+    }
   }
   .links-wrapper {
     text-align: left;
@@ -113,6 +147,9 @@ export const SocialLinks = styled.div`
   ul {
     columns: 3;
     margin-top: 0rem;
+    @media only screen and (max-width: 768px) {
+      columns: 1;
+    }
   }
 
   li {

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { Wrapper } from '../../theme'
 
-export const LandingWrapper = styled.header`
+export const LandingWrapper = styled.section`
   position: relative;
   color: var(--dark);
   overflow: hidden;
@@ -14,6 +14,14 @@ export const LandingWrapper = styled.header`
     margin-top: auto;
     position: relative;
     bottom: -7rem;
+
+    @media only screen and (max-width: 768px) {
+      bottom: 0;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: calc(100vh - 78px);
   }
 `
 
@@ -67,6 +75,9 @@ export const Text = styled(Wrapper)`
     font-size: 4rem;
     font-weight: 600;
     word-spacing: 0.5rem;
+    @media only screen and (max-width: 768px) {
+      font-size: 2.6rem;
+    }
   }
 
   .sub-titles {
@@ -90,6 +101,9 @@ export const Text = styled(Wrapper)`
     letter-spacing: 0.08rem;
     font-weight: 300;
     font-family: monospace;
+    @media only screen and (max-width: 768px) {
+      font-size: 1.4rem;
+    }
 
     span {
       font-size: 3.2rem;
@@ -98,6 +112,9 @@ export const Text = styled(Wrapper)`
       color: var(--salmon);
       position: relative;
       top: 0.4rem;
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
     }
 
     b {

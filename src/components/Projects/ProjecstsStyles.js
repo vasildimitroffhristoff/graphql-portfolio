@@ -8,6 +8,11 @@ export const ProjectsSection = styled.section`
   h2 {
     margin: 5rem auto 0 auto;
 
+    @media only screen and (max-width: 768px) {
+      font-size: 3rem;
+      margin-top: 0;
+    }
+
     .icon {
       font-size: 3rem;
       margin-right: 2rem;
@@ -44,15 +49,26 @@ export const BottomLinks = styled.section`
   background-color: white;
   padding: 5rem;
 
+  @media only screen and (max-width: 768px) {
+    padding: 0rem;
+  }
+
   .wrapper {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .col {
     text-align: left;
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 4rem;
+    }
   }
 `
 
@@ -63,6 +79,12 @@ export const LatestProjects = styled.section`
   grid-column-gap: 6rem;
   grid-row-gap: 4rem;
   grid-auto-rows: minmax(100px, auto);
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
 `
 
 export const Project = styled.div`
@@ -77,6 +99,10 @@ export const Project = styled.div`
       font-size: 2rem;
       width: 60%;
       margin: 0 auto 0.5rem auto;
+
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
 
       a {
         text-decoration: none;
@@ -121,6 +147,10 @@ export const Project = styled.div`
       h3 {
         font-size: 3.2rem;
         width: 100%;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 2rem;
+        }
       }
 
       small {
@@ -132,6 +162,10 @@ export const Project = styled.div`
       width: 100%;
       height: 35rem;
       box-shadow: none;
+
+      @media only screen and (max-width: 768px) {
+        height: 20rem;
+      }
 
       &:hover {
         transform: none;
