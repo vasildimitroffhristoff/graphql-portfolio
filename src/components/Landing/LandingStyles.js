@@ -68,13 +68,14 @@ export const Text = styled(Wrapper)`
   h2 {
     height: 5rem;
     line-height: 5rem;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.6rem;
     margin: 0;
     text-transform: uppercase;
     position: relative;
-    font-size: 4rem;
+    font-size: 3.8rem;
     font-weight: 600;
     word-spacing: 0.5rem;
+
     @media only screen and (max-width: 768px) {
       font-size: 2.6rem;
     }
@@ -101,17 +102,19 @@ export const Text = styled(Wrapper)`
     letter-spacing: 0.08rem;
     font-weight: 300;
     font-family: monospace;
+
     @media only screen and (max-width: 768px) {
       font-size: 1.4rem;
     }
 
     span {
       font-size: 3.2rem;
-      padding: 0 0.5rem;
+      padding: 0 1.4rem;
       font-weight: 300;
       color: var(--salmon);
       position: relative;
-      top: 0.4rem;
+      top: 0.3rem;
+
       @media only screen and (max-width: 768px) {
         display: none;
       }
