@@ -73,7 +73,6 @@ export const Text = styled(Wrapper)`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* text-transform: uppercase; */
     margin-top: 1.5rem;
   }
 

@@ -88,7 +88,9 @@ function AboutComponent() {
           ></p>
 
           <h3>What do I do?</h3>
-          <img className="git-commits" src={gitCommits} alt="" />
+          <a href="https://github.com/vasildimitroffhristoff" target="__blank">
+            <img className="git-commits" src={gitCommits} alt="" />
+          </a>
 
           <p
             className="two-cols"

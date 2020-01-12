@@ -131,12 +131,6 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
-  .deprecated, .deprecated > * {
-    text-decoration: line-through;
-    /* opacity: 0.8; */
-    color: var(--grey)
-  }
-
   /* animation transition */
   ${transitionAnimation}
   /* end animation transition */
