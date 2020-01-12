@@ -76,23 +76,21 @@ export default function Project(props) {
           )}
           <BlockRevealAnimation color="white">
             {introParagraph && <p>{introParagraph}</p>}
-            <img src={imgUrl} alt="" />
+
+            {video ? (
+              <Player playsInline>
+                <source src={video.url} type="video/mp4" />
+              </Player>
+            ) : (
+              <img src={imgUrl} alt="" />
+            )}
+
             {description && (
               <>
-                <p dangerouslySetInnerHTML={{ __html: description }}></p>
-                <p dangerouslySetInnerHTML={{ __html: description }}></p>
-                <p dangerouslySetInnerHTML={{ __html: description }}></p>
                 <p dangerouslySetInnerHTML={{ __html: description }}></p>
               </>
             )}
           </BlockRevealAnimation>
-
-          {/* Video */}
-          {video ? (
-            <Player playsInline>
-              <source src={video.url} type="video/mp4" />
-            </Player>
-          ) : null}
 
           {/* Image gallery */}
           {imageGallery.length ? (

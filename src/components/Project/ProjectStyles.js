@@ -1,15 +1,20 @@
 import styled from 'styled-components'
 
 export const ProjectPage = styled.div`
-  background-color: var(--greyIsh); 
-  
+  background-color: var(--greyIsh);
+
   h2 {
-    margin-bottom: 0;
+    margin-bottom: 3rem;
+  }
+
+  ul {
+    list-style: disc;
+    list-style-position: inside;
+    padding-left: 2rem;
   }
 
   img {
     max-width: 100%;
-    margin: 3rem 0;
   }
 
   .go-back-btn {
