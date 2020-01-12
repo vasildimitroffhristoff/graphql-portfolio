@@ -26,7 +26,7 @@ function ProjectsComponent() {
           <h2>What I've been up to?</h2>
           <p>
             Here you can find out more about the projects I've been involved
-            into during my professional career, personal projects, demos.
+            into during my professional career, personal projects, demos...
           </p>
 
           <LatestProjects>

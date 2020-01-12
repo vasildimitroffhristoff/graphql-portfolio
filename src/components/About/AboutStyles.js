@@ -7,6 +7,7 @@ export const AboutSection = styled.section`
 
   header {
     position: relative;
+    min-height: 33rem;
   }
 
   h2 {
@@ -30,7 +31,8 @@ export const AboutSection = styled.section`
   }
 
   .me {
-    max-width: 28rem;
+    /* max-width: 28rem; */
+    height: 20rem;
     margin: 0 auto;
     display: block;
   }
@@ -88,6 +90,10 @@ export const AboutSection = styled.section`
       column-count: 2;
       column-gap: 5rem;
       text-align: justify;
+
+      a {
+        color: var(--dark);
+      }
     }
   }
 `

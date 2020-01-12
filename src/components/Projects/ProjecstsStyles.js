@@ -6,7 +6,7 @@ export const ProjectsSection = styled.section`
   padding: 8rem 0 0 0;
 
   h2 {
-    margin: 5rem auto;
+    margin: 5rem auto 0 auto;
 
     .icon {
       font-size: 3rem;

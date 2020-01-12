@@ -37,7 +37,7 @@ const transitionAnimation = css`
     transition: opacity 300ms linear 500ms, transform 300ms ease-out 500ms;
   }
 
-  /* .fade-exit {
+  .fade-exit {
     opacity: 1;
     transform: translateY(0);
   }
@@ -45,7 +45,7 @@ const transitionAnimation = css`
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 150ms linear, transform 150ms ease-in;
-  } */
+  }
 
   /* Landing headings */
   .fade-appear .landing-subtitle,
@@ -65,22 +65,6 @@ const transitionAnimation = css`
     transition: opacity 300ms linear 2000ms, transform 300ms ease-out 2000ms;
   }
   /* end langind headings */
-
-  /* greeting-code */
-  .greeting-code,
-  .fade-appear .greeting-code,
-  .fade-enter .greeting-code {
-    opacity: 0;
-    z-index: 1;
-    transform: translateY(-15px);
-  }
-
-  .fade-appear-done .greeting-code,
-  .fade-enter-done .greeting-code {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  /* end greeting-code */
 `
 
 export const GlobalStyles = createGlobalStyle`

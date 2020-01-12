@@ -60,12 +60,12 @@ export const Text = styled(Wrapper)`
   h2 {
     height: 5rem;
     line-height: 5rem;
-    letter-spacing: 0.9rem;
+    letter-spacing: 0.5rem;
     margin: 0;
     text-transform: uppercase;
     position: relative;
-    font-size: 4.7rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 600;
     word-spacing: 0.5rem;
   }
 

@@ -6,6 +6,7 @@ import gitCommits from '../../assets/git-commits.png'
 import me from '../../assets/me.svg'
 import Resume from '../../assets/vh_cv.pdf'
 import { Wrapper } from '../../theme'
+import Loading from '../Loading'
 import { AboutSection, SocialLinks } from './AboutStyles'
 import { ABOUT } from './graphql'
 
@@ -13,7 +14,7 @@ function AboutComponent() {
   const { loading, error, data } = useQuery(ABOUT, {
     variables: { id: 'ck4h6pxfvasyx0b66zim26s2i' }
   })
-  if (loading || error || !data) return <div>...</div>
+  if (loading || error || !data) return <Loading>...</Loading>
 
   const { whoAmI, whatIDo } = data.about
 
