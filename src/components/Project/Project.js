@@ -2,12 +2,12 @@ import '../../../node_modules/video-react/dist/video-react.css'
 
 import { useQuery } from '@apollo/react-hooks'
 import React, { useCallback, useState } from 'react'
-import BlockRevealAnimation from 'react-block-reveal-animation'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import Gallery from 'react-photo-gallery'
 import { Player } from 'video-react'
 
 import { Wrapper } from '../../theme'
+import Loading from '../Loading'
 import { CURRENT_PROJECT } from './graphql'
 import { ProjectPage } from './ProjectStyles'
 
@@ -32,7 +32,7 @@ export default function Project(props) {
 
   const goBack = () => props.history.goBack()
 
-  if (loading || error || !data || data.project === null) return <div>...</div>
+  if (loading || error || !data || data.project === null) return <Loading />
 
   const {
     project: {
@@ -60,41 +60,36 @@ export default function Project(props) {
             <i className="fas fa-chevron-left"></i>
             Return to projects
           </button>
-          <BlockRevealAnimation color="white">
-            <h2>{projectName}</h2>
-          </BlockRevealAnimation>
+
+          <h2>{projectName}</h2>
 
           {projectUrl !== null && (
             <p className="project-url">
-              <BlockRevealAnimation color="white">
-                <i className="icon fas fa-external-link-alt"></i>
-                <a href={projectUrl} target="__blank">
-                  {projectUrl}
-                </a>
-              </BlockRevealAnimation>
+              <i className="icon fas fa-external-link-alt"></i>
+              <a href={projectUrl} target="__blank">
+                {projectUrl}
+              </a>
             </p>
           )}
-          <BlockRevealAnimation color="white">
-            {introParagraph && <p>{introParagraph}</p>}
+          {introParagraph && <p>{introParagraph}</p>}
 
-            {video ? (
-              <Player playsInline>
-                <source src={video.url} type="video/mp4" />
-              </Player>
-            ) : (
-              <img src={imgUrl} alt="" />
-            )}
+          {video ? (
+            <Player playsInline>
+              <source src={video.url} type="video/mp4" />
+            </Player>
+          ) : (
+            <img src={imgUrl} alt="" />
+          )}
 
-            {description && (
-              <>
-                <p dangerouslySetInnerHTML={{ __html: description }}></p>
-              </>
-            )}
-          </BlockRevealAnimation>
+          {description && (
+            <>
+              <p dangerouslySetInnerHTML={{ __html: description }}></p>
+            </>
+          )}
 
           {/* Image gallery */}
           {imageGallery.length ? (
-            <BlockRevealAnimation color="white">
+            <>
               <Gallery photos={photos} onClick={openLightbox} />
               <ModalGateway>
                 {viewerIsOpen ? (
@@ -110,7 +105,7 @@ export default function Project(props) {
                   </Modal>
                 ) : null}
               </ModalGateway>
-            </BlockRevealAnimation>
+            </>
           ) : null}
         </Wrapper>
       </ProjectPage>

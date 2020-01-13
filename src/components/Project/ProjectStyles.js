@@ -4,7 +4,7 @@ export const ProjectPage = styled.div`
   background-color: var(--greyIsh);
 
   h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 
   ul {
@@ -45,7 +45,8 @@ export const ProjectPage = styled.div`
   .project-url {
     transition: all 300ms ease-in-out;
     display: inline-block;
-    margin-top: 2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
     /* background-color: white; */
     /* padding: 0.5rem 2rem 0.5rem 1rem; */
     border-radius: 0.5rem;
