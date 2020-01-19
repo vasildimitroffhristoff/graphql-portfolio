@@ -45,6 +45,17 @@ const transitionAnimation = css`
     transition: opacity 600ms linear 2000ms, transform 300ms ease-in 2000ms;
     transform: translateY(0);
   }
+
+  .fade-appear .me,
+  .fade-enter .me {
+    opacity: 0;
+  }
+
+  .fade-appear-active .me,
+  .fade-enter-active .me {
+    opacity: 1;
+    transition: opacity 600ms linear;
+  }
 `
 
 export const GlobalStyles = createGlobalStyle`
