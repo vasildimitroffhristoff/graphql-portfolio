@@ -124,7 +124,7 @@ function ProjectsComponent() {
               </div>
               <div className="col">
                 <h4>
-                  <i className="icon fab fa-codepen"></i>Codepen
+                  <i className="icon fab fa-codepen"></i>Demo
                 </h4>
                 <a
                   className="link"
@@ -139,6 +139,13 @@ function ProjectsComponent() {
                   target="__blank"
                 >
                   Time log chart (React, TypeScript, Chart.js)
+                </a>
+                <a
+                  href="https://codesandbox.io/s/frosty-brattain-7482r?fontsize=14&hidenavigation=1&theme=dark"
+                  className="link"
+                  target="__blank"
+                >
+                  Experience points chart (React, TypeScript, Chart.js)
                 </a>
               </div>
             </div>

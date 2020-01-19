@@ -18,6 +18,13 @@ function LandingComponent() {
               <i className="fab fa-react"></i>", ...<i>other</i>]
               <span>{'}'}</span>
             </h4>
+            <h4 className="mobile">
+              <b>Front-end developer</b>
+              <b>
+                {' '}
+                <i className="fab fa-react"></i>
+              </b>
+            </h4>
           </div>
         </Text>
         <svg

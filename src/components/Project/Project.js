@@ -48,8 +48,8 @@ export default function Project(props) {
 
   const photos = imageGallery.map(img => ({
     src: img.url,
-    width: 3,
-    height: 2
+    width: 1,
+    height: 1.2
   }))
 
   return (

@@ -9,11 +9,12 @@ export const LandingWrapper = styled.section`
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 70px);
 
   .wave {
     margin-top: auto;
     position: relative;
-    bottom: -7rem;
+    bottom: -10rem;
 
     @media only screen and (max-width: 768px) {
       bottom: 0;
@@ -86,6 +87,10 @@ export const Text = styled(Wrapper)`
     align-items: center;
     justify-content: center;
     margin-top: 1.5rem;
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 0;
+    }
   }
 
   h3 {
@@ -103,8 +108,29 @@ export const Text = styled(Wrapper)`
     font-weight: 300;
     font-family: monospace;
 
+    &.mobile {
+      display: none;
+    }
+
     @media only screen and (max-width: 768px) {
       font-size: 1.4rem;
+      display: none;
+
+      &.mobile {
+        display: block;
+        font-size: 1.7rem;
+
+        b {
+          display: block;
+
+          &:nth-of-type(2) {
+            font-size: 6rem;
+            margin-top: 2rem;
+            opacity: .1;
+            font-weight: normal;
+          }
+        }
+      }
     }
 
     span {

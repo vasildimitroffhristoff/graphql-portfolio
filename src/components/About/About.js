@@ -33,7 +33,7 @@ function AboutComponent() {
                   hideWhenDone: true
                 }}
               >
-                <Typist.Delay ms={1000} />
+                <Typist.Delay ms={800} />
                 <span>who am I</span>
                 <Typist.Backspace count={8} delay={400} />
                 <span>whoami</span>

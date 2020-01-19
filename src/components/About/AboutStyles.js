@@ -64,7 +64,7 @@ export const AboutSection = styled.section`
     border-radius: 3px;
     box-shadow: none;
     filter: opacity(0.4) grayscale(1) blur(1px);
-    transition: all 150ms ease-in-out;
+    transition: all 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
     &:hover {
       filter: unset;
@@ -85,7 +85,7 @@ export const AboutSection = styled.section`
     max-width: 30rem;
     display: block;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    transition: all 200ms ease-in-out;
+    transition: all 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
     .icon {
       margin-right: 1rem;
@@ -111,6 +111,9 @@ export const AboutSection = styled.section`
       column-count: 2;
       column-gap: 5rem;
       text-align: justify;
+      p {
+        justify-content: center;
+      }
       @media only screen and (max-width: 768px) {
         column-count: 1;
         text-align: center;

@@ -1,18 +1,26 @@
 import styled, { createGlobalStyle, css } from 'styled-components'
 
 const transitionAnimation = css`
+  div.transition-group {
+    position: relative;
+  }
+  section.route-section {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
   .fade-enter,
   .fade-appear {
     opacity: 0;
     z-index: 1;
-    transform: translateY(-15px);
   }
 
   .fade-appear-active,
   .fade-enter-active {
     opacity: 1;
-    transform: translateY(0);
-    transition: opacity 300ms linear 150ms, transform 300ms ease-out 150ms;
+    transition: opacity 200ms ease-in 150ms, transform 200ms ease-in 150ms;
   }
 
   .fade-exit {
@@ -25,7 +33,6 @@ const transitionAnimation = css`
     transition: opacity 150ms linear, transform 150ms ease-in;
   }
 
-  /* Landing headings */
   .fade-appear .landing-subtitle,
   .fade-enter .landing-subtitle {
     transform: translateY(-5px);
@@ -34,15 +41,10 @@ const transitionAnimation = css`
 
   .fade-appear-active .landing-subtitle,
   .fade-enter-active .landing-subtitle {
-    transform: translateY(0);
     opacity: 1;
+    transition: opacity 600ms linear 2000ms, transform 300ms ease-in 2000ms;
+    transform: translateY(0);
   }
-
-  .fade-appear-active .landing-subtitle,
-  .fade-enter-active .landing-subtitle {
-    transition: opacity 300ms linear 2000ms, transform 300ms ease-out 2000ms;
-  }
-  /* end langind headings */
 `
 
 export const GlobalStyles = createGlobalStyle`
