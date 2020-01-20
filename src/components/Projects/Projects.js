@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { Wrapper } from '../../theme'
 import Loading from '../Loading'
+import ProgressiveImage from '../ProgresiveImage'
 import { PROJECTS } from './graphql'
 import {
   BottomLinks,
@@ -36,7 +37,7 @@ function ProjectsComponent() {
                   <Project key={project.id}>
                     <div className="img-wrapper">
                       <Link to={`project/${project.id}`}>
-                        <img src={project.projectImg.url} alt="" />
+                        <ProgressiveImage image={project.projectImg.url} />
                       </Link>
                     </div>
                     <div className="header">
