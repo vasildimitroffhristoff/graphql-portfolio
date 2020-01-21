@@ -1,14 +1,20 @@
-import { PureComponent } from 'react'
+import { useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 
-class ScrollIntoView extends PureComponent {
-  componentDidMount = () => window.scrollTo(0, 0)
+function ScrollIntoView({ children, location }) {
+  useEffect(() => {
+    if (location) {
+      window.scrollTo(0, 0)
+    }
+  }, [])
 
-  componentDidUpdate = prevProps => {
-    if (this.props.location !== prevProps.location) window.scrollTo(0, 0)
-  }
+  useEffect(() => {
+    if (location) {
+      window.scrollTo(0, 0)
+    }
+  }, [location])
 
-  render = () => this.props.children
+  return children
 }
 
 export default withRouter(ScrollIntoView)
