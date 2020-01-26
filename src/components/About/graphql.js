@@ -7,7 +7,6 @@ export const ABOUT = gql`
       id
       header
       whoAmI
-      whatIDo
     }
   }
 `

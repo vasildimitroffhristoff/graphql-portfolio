@@ -13,7 +13,7 @@ export const LandingWrapper = styled.section`
 
   .wave {
     margin-top: auto;
-    position: relative;
+    position: absolute;
     bottom: -10rem;
 
     @media only screen and (max-width: 768px) {

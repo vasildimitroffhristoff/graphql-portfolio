@@ -6,7 +6,6 @@ import gitCommits from '../../assets/git-commits.png'
 import me from '../../assets/me.svg'
 import Resume from '../../assets/vh_cv.pdf'
 import { Wrapper } from '../../theme'
-import Loading from '../Loading'
 import { AboutSection, SocialLinks } from './AboutStyles'
 import { ABOUT } from './graphql'
 
@@ -14,9 +13,9 @@ function AboutComponent() {
   const { loading, error, data } = useQuery(ABOUT, {
     variables: { id: 'ck4h6pxfvasyx0b66zim26s2i' }
   })
-  if (loading || error || !data) return <Loading>...</Loading>
+  if (loading || error || !data) return null
 
-  const { whoAmI, whatIDo } = data.about
+  const { whoAmI } = data.about
 
   return (
     <div className="page">
@@ -46,7 +45,6 @@ function AboutComponent() {
             dangerouslySetInnerHTML={{ __html: whoAmI }}
           ></p>
 
-          <h3>What do I do?</h3>
           <a
             href="https://github.com/vasildimitroffhristoff"
             rel="noopener noreferrer"
@@ -54,11 +52,6 @@ function AboutComponent() {
           >
             <img className="git-commits" src={gitCommits} alt="" />
           </a>
-
-          <p
-            className="two-cols"
-            dangerouslySetInnerHTML={{ __html: whatIDo }}
-          ></p>
           <SocialLinks>
             <h3>Find me on:</h3>
             <div className="links-wrapper">

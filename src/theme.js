@@ -98,6 +98,7 @@ export const GlobalStyles = createGlobalStyle`
   p {
     font-size: 1.8rem;
     line-height: 4rem;
+    letter-spacing: 0.01rem;
   }
 
   ul {

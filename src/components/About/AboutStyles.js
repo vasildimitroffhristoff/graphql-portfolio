@@ -60,7 +60,7 @@ export const AboutSection = styled.section`
 
   .git-commits {
     max-width: 100%;
-    margin: 0 0 3rem 0;
+    margin: 3rem 0 3rem 0;
     border-radius: 3px;
     box-shadow: none;
     filter: opacity(0.4) grayscale(1) blur(1px);
@@ -105,6 +105,12 @@ export const AboutSection = styled.section`
 
     svg {
       margin: 0 0.8rem;
+      transition: transform 120ms ease-in 200ms;
+      transform: scale(1.2)!important;
+
+    }
+    svg:hover {
+      transform: scale(1.5)!important;
     }
 
     &.two-cols {
