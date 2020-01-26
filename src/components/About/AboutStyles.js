@@ -105,12 +105,12 @@ export const AboutSection = styled.section`
 
     svg {
       margin: 0 0.8rem;
-      transition: transform 120ms ease-in 200ms;
+      transition: all 50ms ease-in 200ms;
       transform: scale(1.2)!important;
 
     }
     svg:hover {
-      transform: scale(1.5)!important;
+      transform: scale(1.7)!important;
     }
 
     &.two-cols {
@@ -158,6 +158,7 @@ export const SocialLinks = styled.div`
     margin-top: 0rem;
     @media only screen and (max-width: 768px) {
       columns: 1;
+      text-align: center;
     }
   }
 

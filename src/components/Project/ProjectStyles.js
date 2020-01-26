@@ -17,6 +17,10 @@ export const ProjectPage = styled.div`
     max-width: 100%;
   }
 
+  .react-photo-gallery--gallery img {
+    width: 32.9%;
+  }
+
   .go-back-btn {
     display: block;
     box-shadow: none;

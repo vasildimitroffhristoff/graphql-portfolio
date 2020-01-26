@@ -16,7 +16,7 @@ import {
 function ProjectsComponent() {
   const { loading, error, data } = useQuery(PROJECTS)
 
-  if (loading || error || !data) return <Loading />
+  if (loading || error || !data) return null
 
   const { projects } = data
 

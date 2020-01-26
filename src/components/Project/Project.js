@@ -47,67 +47,67 @@ export default function Project(props) {
   } = data
 
   const photos = imageGallery.map(img => ({
-    src: img.url,
-    width: 1,
-    height: 1.2
+    src: img.url
   }))
 
   return (
     <div className="page">
       <ProjectPage>
-        <Wrapper>
-          <button className="go-back-btn" onClick={goBack}>
-            <i className="fas fa-chevron-left"></i>
-            Return to projects
-          </button>
+        <div className="project">
+          <Wrapper>
+            <button className="go-back-btn" onClick={goBack}>
+              <i className="fas fa-chevron-left"></i>
+              Return to projects
+            </button>
+            <h2>{projectName}</h2>
 
-          <h2>{projectName}</h2>
+            {projectUrl !== null && (
+              <p className="project-url">
+                <i className="icon fas fa-external-link-alt"></i>
+                <a href={projectUrl} target="__blank">
+                  {projectUrl}
+                </a>
+              </p>
+            )}
 
-          {projectUrl !== null && (
-            <p className="project-url">
-              <i className="icon fas fa-external-link-alt"></i>
-              <a href={projectUrl} target="__blank">
-                {projectUrl}
-              </a>
-            </p>
-          )}
-          {introParagraph && <p>{introParagraph}</p>}
+            {introParagraph && <p>{introParagraph}</p>}
 
-          {video ? (
-            <Player playsInline>
-              <source src={video.url} type="video/mp4" />
-            </Player>
-          ) : (
-            <img src={imgUrl} alt="" />
-          )}
+            {video ? (
+              <Player playsInline>
+                <source src={video.url} type="video/mp4" />
+              </Player>
+            ) : (
+              <img src={imgUrl} alt="" />
+            )}
 
-          {description && (
-            <>
-              <p dangerouslySetInnerHTML={{ __html: description }}></p>
-            </>
-          )}
+            {description && (
+              <>
+                <p dangerouslySetInnerHTML={{ __html: description }}></p>
+              </>
+            )}
 
-          {/* Image gallery */}
-          {imageGallery.length ? (
-            <>
-              <Gallery photos={photos} onClick={openLightbox} />
-              <ModalGateway>
-                {viewerIsOpen ? (
-                  <Modal onClose={closeLightbox}>
-                    <Carousel
-                      currentIndex={currentImage}
-                      views={photos.map(x => ({
-                        ...x,
-                        srcset: x.srcSet,
-                        caption: x.title
-                      }))}
-                    />
-                  </Modal>
-                ) : null}
-              </ModalGateway>
-            </>
-          ) : null}
-        </Wrapper>
+            {/* Image gallery */}
+            {imageGallery.length ? (
+              <>
+                <Gallery photos={photos} onClick={openLightbox} />
+                <ModalGateway>
+                  {viewerIsOpen ? (
+                    <Modal onClose={closeLightbox}>
+                      <Carousel
+                        currentIndex={currentImage}
+                        views={photos.map(x => ({
+                          ...x,
+                          srcset: x.srcSet,
+                          caption: x.title
+                        }))}
+                      />
+                    </Modal>
+                  ) : null}
+                </ModalGateway>
+              </>
+            ) : null}
+          </Wrapper>
+        </div>
       </ProjectPage>
     </div>
   )
