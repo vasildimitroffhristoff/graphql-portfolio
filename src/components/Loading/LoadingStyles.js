@@ -7,7 +7,6 @@ export const LoadingWrapper = styled.div`
   left: 0;
   bottom: 0;
   width: 100vw;
-  background-color: var(--light);
   z-index: 9000;
   display: flex;
   align-items: center;

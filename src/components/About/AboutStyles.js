@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const AboutSection = styled.section`
   text-align: center;
-  background-color: #fafafa;
   padding: 8rem 0;
 
   header {
@@ -37,9 +36,8 @@ export const AboutSection = styled.section`
   }
 
   h3 {
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-    font-size: 3.6rem;
+    margin-top: 0;
+    font-size: 3rem;
     text-align: center;
 
     @media only screen and (max-width: 768px) {
@@ -49,7 +47,7 @@ export const AboutSection = styled.section`
   }
 
   .me {
-    height: 20rem;
+    height: 19rem;
     margin: 0 auto;
     display: block;
 
@@ -60,32 +58,34 @@ export const AboutSection = styled.section`
 
   .git-commits {
     max-width: 100%;
-    margin: 3rem 0 3rem 0;
+    margin: 2rem 0 4rem 0;
     border-radius: 3px;
     box-shadow: none;
     filter: opacity(0.4) grayscale(1) blur(1px);
-    transition: all 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 150ms
+      cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
     &:hover {
       filter: unset;
       box-shadow: none;
-      box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.08);
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.07);
     }
   }
 
   .resume-link {
-    text-decoration: none;
     font-weight: 700;
-    color: var(--dark);
     text-transform: capitalize;
-    background-color: white;
-    padding: 2rem;
+    padding: 1.8rem 2.8rem;
     border-radius: 10rem;
     margin: 4rem auto 6rem auto;
     max-width: 30rem;
-    display: block;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    transition: all 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    display: inline-block;
+    transition: all 150ms
+      cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    font-size: 1.3rem;
+
+    background-color: var(--blue);
+    color: white;
 
     .icon {
       margin-right: 1rem;
@@ -94,23 +94,19 @@ export const AboutSection = styled.section`
     &:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       background-color: var(--blue);
-      color: white;
     }
   }
 
   p {
     margin-top: 0;
-    margin-bottom: 2rem;
-    text-align: left;
 
     svg {
       margin: 0 0.8rem;
       transition: all 50ms ease-in 200ms;
-      transform: scale(1.2)!important;
-
+      transform: scale(1.2) !important;
     }
     svg:hover {
-      transform: scale(1.7)!important;
+      transform: scale(1.7) !important;
     }
 
     &.two-cols {
@@ -118,7 +114,7 @@ export const AboutSection = styled.section`
       column-gap: 5rem;
       text-align: justify;
       p {
-        justify-content: center;
+        text-align: justify;
       }
       @media only screen and (max-width: 768px) {
         column-count: 1;
@@ -138,8 +134,6 @@ export const AboutSection = styled.section`
 
 export const SocialLinks = styled.div`
   h3 {
-    margin-top: 6rem;
-
     @media only screen and (max-width: 768px) {
       margin-bottom: 2rem;
       font-size: 3rem;
@@ -165,11 +159,12 @@ export const SocialLinks = styled.div`
   li {
     margin-bottom: 2rem;
     margin-right: 2rem;
-    font-family: monospace;
 
     a {
       color: #000;
       text-decoration: none;
+      font-weight: 500;
+      font-size: 1.5rem;
 
       &:hover {
         text-decoration: underline;

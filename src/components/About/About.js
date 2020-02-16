@@ -24,7 +24,7 @@ function AboutComponent() {
           <header>
             <img className="me" src={me} alt="me" />
             <h2>
-              <i className="icon fas fa-terminal"></i>
+              <i className="icon fas fa-terminal" />
               <Typist
                 cursor={{
                   show: true,
@@ -43,14 +43,18 @@ function AboutComponent() {
           <p
             className="two-cols"
             dangerouslySetInnerHTML={{ __html: whoAmI }}
-          ></p>
+          />
 
           <a
             href="https://github.com/vasildimitroffhristoff"
             rel="noopener noreferrer"
             target="__blank"
           >
-            <img className="git-commits" src={gitCommits} alt="" />
+            <img
+              className="git-commits"
+              src={gitCommits}
+              alt=""
+            />
           </a>
           <SocialLinks>
             <h3>Find me on:</h3>
@@ -62,7 +66,7 @@ function AboutComponent() {
                     rel="noopener noreferrer"
                     target="__blank"
                   >
-                    <i className="fab fa-github"></i>Git
+                    <i className="fab fa-github" />Git
                   </a>
                 </li>
 
@@ -72,7 +76,7 @@ function AboutComponent() {
                     rel="noopener noreferrer"
                     target="__blank"
                   >
-                    <i className="fab fa-linkedin"></i>Linkedin
+                    <i className="fab fa-linkedin" />Linkedin
                   </a>
                 </li>
                 <li>
@@ -81,7 +85,7 @@ function AboutComponent() {
                     rel="noopener noreferrer"
                     target="__blank"
                   >
-                    <i className="fab fa-bitbucket"></i>Bitbucket
+                    <i className="fab fa-bitbucket" />Bitbucket
                   </a>
                 </li>
                 <li>
@@ -90,7 +94,7 @@ function AboutComponent() {
                     rel="noopener noreferrer"
                     target="__blank"
                   >
-                    <i className="fab fa-behance-square"></i>Behance
+                    <i className="fab fa-behance-square" />Behance
                   </a>
                 </li>
 
@@ -100,7 +104,7 @@ function AboutComponent() {
                     rel="noopener noreferrer"
                     target="__blank"
                   >
-                    <i className="fab fa-codepen"></i>Codepen
+                    <i className="fab fa-codepen" />Codepen
                   </a>
                 </li>
                 <li>
@@ -109,14 +113,18 @@ function AboutComponent() {
                     rel="noopener noreferrer"
                     target="__blank"
                   >
-                    <i className="fas fa-envelope-square"></i>Email
+                    <i className="fas fa-envelope-square" />Email
                   </a>
                 </li>
               </ul>
             </div>
           </SocialLinks>
-          <a className="resume-link" href={Resume} target="__blank">
-            <i className="icon far fa-file-alt"></i>
+          <a
+            className="resume-link"
+            href={Resume}
+            target="__blank"
+          >
+            <i className="icon far fa-file-alt" />
             checkout my resume
           </a>
         </Wrapper>

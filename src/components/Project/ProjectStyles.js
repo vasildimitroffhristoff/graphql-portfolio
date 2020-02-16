@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const ProjectPage = styled.div`
-  background-color: var(--greyIsh);
-
   h2 {
     margin-bottom: 1rem;
   }
@@ -17,6 +15,10 @@ export const ProjectPage = styled.div`
     max-width: 100%;
   }
 
+  .description {
+    margin: 3rem 0;
+  }
+
   .react-photo-gallery--gallery img {
     width: 32.9%;
   }
@@ -28,12 +30,12 @@ export const ProjectPage = styled.div`
     border: none;
     outline: none;
     background: transparent;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
     margin-bottom: 6rem;
     margin-top: 4rem;
     padding-left: 0;
+    font-size: 1.1rem;
 
     i {
       background-color: var(--grey);

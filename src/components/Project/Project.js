@@ -12,8 +12,8 @@ import { CURRENT_PROJECT } from './graphql'
 import { ProjectPage } from './ProjectStyles'
 
 export default function Project(props) {
-  const [currentImage, setCurrentImage] = useState(0)
-  const [viewerIsOpen, setViewerIsOpen] = useState(false)
+  const [ currentImage, setCurrentImage ] = useState(0)
+  const [ viewerIsOpen, setViewerIsOpen ] = useState(false)
 
   const openLightbox = useCallback((_, { __, index }) => {
     setCurrentImage(index)
@@ -24,7 +24,11 @@ export default function Project(props) {
     setCurrentImage(0)
     setViewerIsOpen(false)
   }
-  const { loading, error, data } = useQuery(CURRENT_PROJECT, {
+  const {
+    loading,
+    error,
+    data
+  } = useQuery(CURRENT_PROJECT, {
     variables: {
       id: props.location.pathname.split('/')[2]
     }
@@ -32,7 +36,8 @@ export default function Project(props) {
 
   const goBack = () => props.history.goBack()
 
-  if (loading || error || !data || data.project === null) return <Loading />
+  if (loading || error || !data || data.project === null)
+    return <Loading />
 
   const {
     project: {
@@ -46,24 +51,27 @@ export default function Project(props) {
     }
   } = data
 
-  const photos = imageGallery.map(img => ({
+  const photos = imageGallery.map((img) => ({
     src: img.url
   }))
 
   return (
-    <div className="page">
+    <div className="page page--project">
       <ProjectPage>
         <div className="project">
           <Wrapper>
-            <button className="go-back-btn" onClick={goBack}>
-              <i className="fas fa-chevron-left"></i>
-              Return to projects
+            <button
+              className="go-back-btn"
+              onClick={goBack}
+            >
+              <i className="fas fa-chevron-left" />
+              Back to projects
             </button>
             <h2>{projectName}</h2>
 
             {projectUrl !== null && (
               <p className="project-url">
-                <i className="icon fas fa-external-link-alt"></i>
+                <i className="icon fas fa-external-link-alt" />
                 <a href={projectUrl} target="__blank">
                   {projectUrl}
                 </a>
@@ -81,21 +89,28 @@ export default function Project(props) {
             )}
 
             {description && (
-              <>
-                <p dangerouslySetInnerHTML={{ __html: description }}></p>
-              </>
+              <div className="description">
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: description
+                  }}
+                />
+              </div>
             )}
 
             {/* Image gallery */}
             {imageGallery.length ? (
-              <>
-                <Gallery photos={photos} onClick={openLightbox} />
+              <React.Fragment>
+                <Gallery
+                  photos={photos}
+                  onClick={openLightbox}
+                />
                 <ModalGateway>
                   {viewerIsOpen ? (
                     <Modal onClose={closeLightbox}>
                       <Carousel
                         currentIndex={currentImage}
-                        views={photos.map(x => ({
+                        views={photos.map((x) => ({
                           ...x,
                           srcset: x.srcSet,
                           caption: x.title
@@ -104,7 +119,7 @@ export default function Project(props) {
                     </Modal>
                   ) : null}
                 </ModalGateway>
-              </>
+              </React.Fragment>
             ) : null}
           </Wrapper>
         </div>

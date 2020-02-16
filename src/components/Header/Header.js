@@ -12,10 +12,18 @@ export default function Header() {
         <HeaderContent>
           <Logo />
           <nav>
-            <NavLink activeClassName="selected" exact to="/about">
+            <NavLink
+              activeClassName="selected"
+              exact
+              to="/about"
+            >
               about
             </NavLink>
-            <NavLink activeClassName="selected" exact to="/projects">
+            <NavLink
+              activeClassName="selected"
+              exact
+              to="/projects"
+            >
               work
             </NavLink>
             <a
@@ -23,7 +31,7 @@ export default function Header() {
               target="__blank"
               className="git-link"
             >
-              <i className="icon-git fab fa-github"></i>
+              <i className="icon-git fab fa-github" />
             </a>
           </nav>
         </HeaderContent>

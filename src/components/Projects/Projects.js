@@ -21,23 +21,26 @@ function ProjectsComponent() {
   const { projects } = data
 
   return (
-    <div className="page">
+    <div className="page page--projects">
       <ProjectsSection>
         <Wrapper>
           <h2>What I've been up to?</h2>
           <p>
-            Here you can find out more about the projects I've been involved
-            into during my professional career, personal projects, demos...
+            Here you can find out more about the projects
+            I've been involved into during my professional
+            career, personal projects, demos...
           </p>
 
           <LatestProjects>
             {projects.map(
-              project =>
+              (project) =>
                 project.status === 'PUBLISHED' && (
                   <Project key={project.id}>
                     <div className="img-wrapper">
                       <Link to={`project/${project.id}`}>
-                        <ProgressiveImage image={project.projectImg.url} />
+                        <ProgressiveImage
+                          image={project.projectImg.url}
+                        />
                       </Link>
                     </div>
                     <div className="header">
@@ -62,7 +65,7 @@ function ProjectsComponent() {
             <div className="wrapper">
               <div className="col">
                 <h4>
-                  <i className="icon fas fa-archive"></i>Archive
+                  <i className="icon fas fa-archive" />Archive
                 </h4>
 
                 <a
@@ -79,7 +82,11 @@ function ProjectsComponent() {
                 >
                   Quantity Sync
                   <small>
-                    <b> / Shopify API, Polaris React, Express.js</b>
+                    <b>
+                      {' '}
+                      / Shopify API, Polaris React,
+                      Express.js
+                    </b>
                   </small>
                 </a>
                 <a
@@ -125,7 +132,7 @@ function ProjectsComponent() {
               </div>
               <div className="col">
                 <h4>
-                  <i className="icon fab fa-codepen"></i>Demo
+                  <i className="icon fab fa-codepen" />Demo
                 </h4>
                 <a
                   className="link"
@@ -139,14 +146,16 @@ function ProjectsComponent() {
                   href="https://codesandbox.io/s/serene-wright-chzr5?fontsize=14&hidenavigation=1&theme=dark"
                   target="__blank"
                 >
-                  Time log chart (React, TypeScript, Chart.js)
+                  Time log chart (React, TypeScript,
+                  Chart.js)
                 </a>
                 <a
                   href="https://codesandbox.io/s/frosty-brattain-7482r?fontsize=14&hidenavigation=1&theme=dark"
                   className="link"
                   target="__blank"
                 >
-                  Experience points chart (React, TypeScript, Chart.js)
+                  Experience points chart (React,
+                  TypeScript, Chart.js)
                 </a>
               </div>
             </div>
