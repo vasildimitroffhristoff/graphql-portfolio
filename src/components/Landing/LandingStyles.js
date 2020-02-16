@@ -102,7 +102,7 @@ export const Text = styled(Wrapper)`
     margin: 0;
     font-size: 1.8rem;
     font-weight: 300;
-    max-width: 65rem;
+    max-width: 60rem;
     line-height: 3.2rem;
     font-weight: 300;
   }

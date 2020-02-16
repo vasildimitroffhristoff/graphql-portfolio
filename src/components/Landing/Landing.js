@@ -24,9 +24,9 @@ function LandingComponent() {
           </BlockRevealAnimation>
           <div className="sub-titles landing-subtitle">
             <h4>
-              Front-end developer with over 4 years of
-              experience in web development. Specializing in
-              <b> JavaScript</b> and <b>React</b>.
+              Front-end developer with a few years of
+              experience in web development. Doing stuff
+              using <b>React</b>.
             </h4>
 
             <div className="animation">
