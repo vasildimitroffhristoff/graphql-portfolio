@@ -8,10 +8,10 @@ const transitionAnimation = css`
     position: relative;
   }
   section.route-section {
-    position: absolute;
+    /* position: absolute; 
     width: 100%;
     top: 0;
-    left: 0;
+    left: 0; */
   }
 
   .fade-enter,

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const AboutSection = styled.section`
   text-align: center;
-  padding: 8rem 0;
+  padding: 8rem 0 3rem 0;
 
   header {
     position: relative;
