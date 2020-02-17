@@ -11,7 +11,7 @@ import Layout from './components/Layout'
 import NotFound from './components/NotFound'
 import Project from './pages/Project'
 import Projects from './pages/Projects'
-import ScrollToTop from './components/utils/ScrollToTop'
+import ScrollToTop from './utils/ScrollToTop'
 
 function App({ location }) {
   const currentKey = location.pathname.split('/')[1] || '/'
