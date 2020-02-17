@@ -7,7 +7,7 @@ import Gallery from 'react-photo-gallery'
 import { Player } from 'video-react'
 
 import { Wrapper } from '../../theme'
-import Loading from '../Loading'
+import Loading from '../../components/Loading'
 import { CURRENT_PROJECT } from './graphql'
 import { ProjectPage } from './ProjectStyles'
 

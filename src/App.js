@@ -5,13 +5,13 @@ import {
   TransitionGroup
 } from 'react-transition-group'
 
-import About from './About'
-import Landing from './Landing'
-import Layout from './Layout'
-import NotFound from './NotFound'
-import Project from './Project'
-import Projects from './Projects'
-import ScrollToTop from './utils/ScrollToTop'
+import About from './pages/About'
+import Landing from './pages/Landing'
+import Layout from './components/Layout'
+import NotFound from './components/NotFound'
+import Project from './pages/Project'
+import Projects from './pages/Projects'
+import ScrollToTop from './components/utils/ScrollToTop'
 
 function App({ location }) {
   const currentKey = location.pathname.split('/')[1] || '/'

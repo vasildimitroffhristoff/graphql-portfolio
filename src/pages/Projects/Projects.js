@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { Wrapper } from '../../theme'
-import ProgressiveImage from '../ProgresiveImage'
+import ProgressiveImage from '../../components/ProgresiveImage'
 import { PROJECTS } from './graphql'
 import {
   BottomLinks,
