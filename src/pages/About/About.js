@@ -6,7 +6,11 @@ import gitCommits from '../../assets/git-commits.png'
 import me from '../../assets/me.svg'
 import Resume from '../../assets/vh_cv.pdf'
 import { Wrapper } from '../../theme'
-import { AboutSection, SocialLinks } from './AboutStyles'
+import {
+  AboutSection,
+  SocialLinks,
+  Footer
+} from './AboutStyles'
 import { ABOUT } from './graphql'
 
 function AboutComponent() {
@@ -129,6 +133,18 @@ function AboutComponent() {
           </a>
         </Wrapper>
       </AboutSection>
+      <Footer>
+        Animations attribution: {' '}
+        <a
+          href="https://lottiefiles.com/eugene"
+          target="__blank"
+        >
+          @eugene
+        </a>, {''}
+        <a href="https://lottiefiles.com/1749-404">
+          Alessio Wakko
+        </a>
+      </Footer>
     </div>
   )
 }

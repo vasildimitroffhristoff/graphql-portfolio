@@ -176,3 +176,13 @@ export const SocialLinks = styled.div`
     }
   }
 `
+
+export const Footer = styled.footer`
+  text-align: center;
+  padding: 0 0 2rem 0;
+  font-size: 1rem;
+
+  a:hover {
+    text-decoration: underline;
+  }
+`
